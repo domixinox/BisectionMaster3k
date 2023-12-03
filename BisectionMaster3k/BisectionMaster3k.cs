@@ -1,8 +1,8 @@
 namespace BisectionMaster3k
 {
-    public partial class Form1 : Form
+    public partial class BisectionMaster3k : Form
     {
-        public Form1()
+        public BisectionMaster3k()
         {
             InitializeComponent();
         }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BisectionMaster3k", "BisectionMaster3k.csproj", "{DB443B4A-D363-4DCD-A9C4-749D9588E821}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB443B4A-D363-4DCD-A9C4-749D9588E821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB443B4A-D363-4DCD-A9C4-749D9588E821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB443B4A-D363-4DCD-A9C4-749D9588E821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB443B4A-D363-4DCD-A9C4-749D9588E821}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {477C4268-5B39-4C6D-8FC2-FF2E43417EE6}
+	EndGlobalSection
+EndGlobal
