@@ -1,0 +1,27 @@
+//*****************************************************************************
+// FINISH
+
+#1 
+
+//*****************************************************************************
+// TODO LIST
+
+TRZEBA OD A-Z ZROBIĆ !
+
+DONE #1 Make Public Properties
+***
+Indeksatory Coefficients, Powers ZABEZPIECZYC
+Polynomial.Instance.Coefficients.Add(double)
+Polynomial.Instance.Coefficients[int]
+Polynomial.Instance.Powers.Add(double)
+Polynomial.Instance.Powers[int]
+***
+
+//*****************************************************************************
+// BUG LIST
+
+//
+// #1 
+//
+
+SOLVED:
