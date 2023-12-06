@@ -19,15 +19,23 @@ namespace BisectionMaster3k
       // coefficients = A, B, C
       // Od lewej do prawej
 
-    
+    public List<double> Coefficients
+    {
+      get { return coefficients; }
+
+    }
 
     // (B) Potegi Kolejnych Wyrazen
     public static List<double> powers;
       // Ax^5 + C + Bx^3
       // powers = 5, 3, 0
       // Od lewej do prawej
+      
+    public List<double> Powers
+    {
+      get { return powers; }
 
-
+    }
 
     // Singleton private constructor
     private Polynomial()

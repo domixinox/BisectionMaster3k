@@ -32,6 +32,7 @@
       tabPage1 = new TabPage();
       ObliczMiejsceZerowe = new Button();
       tabPage2 = new TabPage();
+      tabPage3 = new TabPage();
       tabControl1.SuspendLayout();
       tabPage1.SuspendLayout();
       SuspendLayout();
@@ -40,6 +41,7 @@
       // 
       tabControl1.Controls.Add(tabPage1);
       tabControl1.Controls.Add(tabPage2);
+      tabControl1.Controls.Add(tabPage3);
       tabControl1.Dock = DockStyle.Fill;
       tabControl1.Location = new Point(0, 0);
       tabControl1.Name = "tabControl1";
@@ -55,7 +57,7 @@
       tabPage1.Padding = new Padding(3);
       tabPage1.Size = new Size(976, 933);
       tabPage1.TabIndex = 0;
-      tabPage1.Text = "Tu Obliczenia";
+      tabPage1.Text = "INPUT";
       tabPage1.UseVisualStyleBackColor = true;
       // 
       // ObliczMiejsceZerowe
@@ -76,8 +78,17 @@
       tabPage2.Padding = new Padding(3);
       tabPage2.Size = new Size(976, 933);
       tabPage2.TabIndex = 1;
-      tabPage2.Text = "O Programie";
+      tabPage2.Text = "OUTPUT";
       tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // tabPage3
+      // 
+      tabPage3.Location = new Point(4, 24);
+      tabPage3.Name = "tabPage3";
+      tabPage3.Size = new Size(976, 933);
+      tabPage3.TabIndex = 2;
+      tabPage3.Text = "O Programie";
+      tabPage3.UseVisualStyleBackColor = true;
       // 
       // BisectionMaster3k
       // 
@@ -100,5 +111,6 @@
     private TabPage tabPage1;
     private TabPage tabPage2;
     private Button ObliczMiejsceZerowe;
+    private TabPage tabPage3;
   }
 }
