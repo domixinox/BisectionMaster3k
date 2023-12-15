@@ -1,12 +1,11 @@
 ﻿//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TYLKO TAKIE FUNKCJE
 
-/*
-P(x) = a * x^n + b * x^(n-1) + .. + c * x + d
-n >= 0
-n moze byc ulamkiem
-Patrz (A) i (B) ponizej
-*/
+/**
+ * P(x) = ax^(n) + bx^(n-1) + .. + cx + d
+ * ! n = liczba naturalna, liczba ulamkowa
+ * Patrz (A) i (B) ponizej
+ */
 
 namespace BisectionMaster3k
 {
@@ -68,17 +67,29 @@ namespace BisectionMaster3k
     }
 
     //*****************************************************************************
+    // CONDITIONS:
+    // powers.Count == coefficients.Count
+    public double f(double x, int expr = 0)
+    {
+      // BASE CASE: max expr
+      return expr < powers.Count ? coefficients[expr] * Math.Pow(x, powers[expr])
+        + f(x, expr+1) : 0;
+
+    }
+
+    //*****************************************************************************
     public double dDegree()
     {
-      if (coefficients.Count == 0)
+      // Prevent IndexOutOfRangeException
+      if (powers.Count == 0)
       {
-        throw new Exception("Property coefficients has 0 elements");
+        return 0;
 
       }
 
-      double max = coefficients[0];
-
-      foreach (var i in coefficients)
+      // Find max power
+      double max = powers[0];
+      foreach (var i in powers)
       {
         if (i > max)
         {
@@ -88,6 +99,7 @@ namespace BisectionMaster3k
 
       }
 
+      // Return max power
       return max;
 
     }

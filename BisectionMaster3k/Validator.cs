@@ -2,13 +2,14 @@
 // VALIDATOR != PARSER
 // PARSER != VALIDATOR
 
-/*
-Walidator ma na celu:
-Zatrzymaj uzytkownika w momencie niepoprawnie wpisanych danych
-*/
+/**
+ * Walidator ma na celu:
+ * Zatrzymaj uzytkownika w momencie niepoprawnie wpisanych danych
+ */
 
 namespace BisectionMaster3k
 {
+  //-----------------------------------------------------------------------------
   static class Validator
   {
     static public string fIndepVar = "x";
