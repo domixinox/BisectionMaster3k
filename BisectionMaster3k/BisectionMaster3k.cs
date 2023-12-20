@@ -13,6 +13,7 @@ namespace BisectionMaster3k
       InitializeComponent();
 
       // Rozmiar Okna Glownego
+      // Zeby na roznych kompach tak samo bylo
       this.Size = new Size(1000, 1000);
 
       //
@@ -28,8 +29,30 @@ namespace BisectionMaster3k
     private void ObliczMiejsceZerowe_Click(object sender, EventArgs e)
     {
       //
+      // Obiekt Wielomiany
+      //
+
       Polynomial poly1 = Polynomial.Instance;
-      MessageBox.Show(poly1.dDegree().ToString());
+
+      //
+      // Walidator
+      //
+
+      //
+      // Parser
+      //
+
+      //
+      // Bisekcja
+      //
+
+      double x1     = Convert.ToDouble(inputRangeX1.Text);
+      double x2     = Convert.ToDouble(inputRangeX2.Text);
+      double delta  = 0.0001;
+
+      double x = Bisection.fBisection(x1, x2, delta);
+
+      MessageBox.Show(x.ToString());
 
     }
   }

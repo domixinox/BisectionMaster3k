@@ -1,9 +1,15 @@
-﻿namespace BisectionMaster3k
+﻿//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/**
+ * Klasa Bisekcji - Cele:
+ * # znajdz 1 m. zerowe
+ */
+
+namespace BisectionMaster3k
 {
   //-----------------------------------------------------------------------------
   static class Bisection
   {
-    private const string EBracketing = "1";
 
     //*****************************************************************************
     // Bisection Method
@@ -11,28 +17,43 @@
     public static double fBisection(double xleft=0, double xright=10,
       double fPrec=0.01, double iterations=100)
     {
-      //
-      // Bracketing Condition
-      //
-
       try
       {
+
+        //
+        // Bracketing Condition
+        //
+
         if (Polynomial.Instance.f(xleft) * Polynomial.Instance.f(xright) > 0)
         {
-          throw new Exception(EBracketing);
-  
+          throw new Exception(Exceptions.EBracketing);
+
         }
 
-        
+        //
+        // Iterations
+        //
+
+        if (iterations < 0)
+        {
+          throw new Exception(Exceptions.EIterations);
+
+        }
 
       }
       catch (Exception e)
       {
         switch (e.Message)
         {
-          case EBracketing:
-            // Exception Class
-            break;
+          // Bracketing Failure
+          case Exceptions.EBracketing:
+            Exceptions.vActBracketingError();
+            return Convert.ToDouble(Exceptions.EBracketing);
+
+          // Iterations Failure
+          case Exceptions.EIterations:
+            Exceptions.vActIterationsError();
+            return Convert.ToDouble(Exceptions.EIterations);
 
         }
 
@@ -45,10 +66,15 @@
       double xmid = xleft / 2 + xright / 2;
 
       //
-      // Is it it ?
+      // Is Midpoint < Precision required ?
       //
 
-      // return;
+      // BASE CASE: Tolerance
+      if (isRangleTolerable(xleft, xright, fPrec))
+      {
+        return xmid;
+
+      }
 
       //
       // Prepare New Recursion
@@ -57,23 +83,22 @@
       // Determine Signs
       double newxleft;
       double newxright;
-      if (Polynomial.Instance.f(xleft) < 0 && Polynomial.Instance.f(xmid) > 0)
+      if (Polynomial.Instance.f(xleft) * Polynomial.Instance.f(xmid) < 0)
       {
-        // signs must differ
+        // Signs must differ
         newxleft = xleft;
         newxright = xmid;
 
       }
       else
       {
+        // Signs must differ
         newxleft = xmid;
         newxright = xright;
 
       }
 
-      // Base Case Tolerance
-      return isRangleTolerable(newxleft, newxright, fPrec) ? xmid :
-        fBisection(newxleft, newxright, fPrec);
+      return fBisection(newxleft, newxright, fPrec);
 
     }
 

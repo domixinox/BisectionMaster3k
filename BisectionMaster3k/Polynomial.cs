@@ -1,46 +1,55 @@
 ﻿//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// TYLKO TAKIE FUNKCJE
 
-/**
- * P(x) = ax^(n) + bx^(n-1) + .. + cx + d
- * ! n = liczba naturalna, liczba ulamkowa
- * Patrz (A) i (B) ponizej
- */
+ /**
+  * Klasa Wielomiany - Cele:
+  * # przechowuj kolejne potegi
+  * # przechowuj kolejne wspolczynniki
+  * # licz f(x)
+  * # podaj stopien f(x)
+  */
+ 
+using BisectionMaster3k.Datatypes;
 
 namespace BisectionMaster3k
 {
   //-----------------------------------------------------------------------------
   public class Polynomial
   {
-    // (A) Wspolczynniki Kolejnych Wyrazen
-    private List<double> coefficients;
-      // Ax^5 + C + Bx^3
-      // coefficients = A, B, C
-      // Od lewej do prawej
+    //
+    // Wspolczynniki
+    //
 
-    public List<double> Coefficients
+    // (A) Wspolczynniki Kolejnych Wyrazen
+    private Coefficients<double> coefficients;
+
+    public Coefficients<double> Coefficients
     {
       get { return coefficients; }
 
     }
 
+    //
+    // Potegi
+    //
+
     // (B) Potegi Kolejnych Wyrazen
-    public static List<double> powers;
-      // Ax^5 + C + Bx^3
-      // powers = 5, 3, 0
-      // Od lewej do prawej
+    public Powers<double> powers;
       
-    public List<double> Powers
+    public Powers<double> Powers
     {
       get { return powers; }
 
     }
 
+    //
+    // Singleton Type Class
+    //
+
     // Singleton private constructor
     private Polynomial()
     {
-      coefficients = new List<double>();
-      powers = new List<double>();
+      coefficients = new Coefficients<double>();
+      powers = new Powers<double>();
 
     }
 
@@ -67,10 +76,17 @@ namespace BisectionMaster3k
     }
 
     //*****************************************************************************
-    // CONDITIONS:
-    // powers.Count == coefficients.Count
+    // COMPUTE F(x)
     public double f(double x, int expr = 0)
     {
+      // CONDITION
+      if (powers.Count != coefficients.Count)
+      {
+        Exceptions.vActCollectionsCountf(Exceptions.Functions.Polynomial);
+        return Convert.ToDouble(Exceptions.ECollectionsCount);
+
+      }
+
       // BASE CASE: max expr
       return expr < powers.Count ? coefficients[expr] * Math.Pow(x, powers[expr])
         + f(x, expr+1) : 0;
@@ -78,6 +94,7 @@ namespace BisectionMaster3k
     }
 
     //*****************************************************************************
+    // COMPUTE DEGREE of F(x)
     public double dDegree()
     {
       // Prevent IndexOutOfRangeException

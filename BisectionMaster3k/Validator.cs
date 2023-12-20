@@ -3,8 +3,8 @@
 // PARSER != VALIDATOR
 
 /**
- * Walidator ma na celu:
- * Zatrzymaj uzytkownika w momencie niepoprawnie wpisanych danych
+ * Klasa Walidacji - Cele:
+ * # Upewnij sie ze pola nie sa puste
  */
 
 namespace BisectionMaster3k
