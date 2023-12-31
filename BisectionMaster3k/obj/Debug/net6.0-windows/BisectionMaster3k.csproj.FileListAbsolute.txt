@@ -30,3 +30,7 @@ D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0
 D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.pdb
 D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.genruntimeconfig.cache
 D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\ref\BisectionMaster3k.dll
+C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\bin\Debug\net6.0-windows\ScottPlot.dll
+C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\bin\Debug\net6.0-windows\ScottPlot.WinForms.dll
+C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.AssemblyReference.cache
+C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.CopyComplete
