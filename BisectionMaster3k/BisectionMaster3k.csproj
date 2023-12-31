@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CodeFile1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ScottPlot.WinForms" Version="4.1.70" />
   </ItemGroup>
 

@@ -44,7 +44,9 @@
             formsPlot1 = new ScottPlot.FormsPlot();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
+            CheckLegend = new CheckBox();
             panel4 = new Panel();
+            button1 = new Button();
             tabPage3 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -53,6 +55,8 @@
             tabPage4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -222,19 +226,44 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(CheckLegend);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 81);
             panel3.Name = "panel3";
             panel3.Size = new Size(1099, 72);
             panel3.TabIndex = 0;
             // 
+            // CheckLegend
+            // 
+            CheckLegend.AutoSize = true;
+            CheckLegend.Checked = true;
+            CheckLegend.CheckState = CheckState.Checked;
+            CheckLegend.Location = new Point(944, 23);
+            CheckLegend.Name = "CheckLegend";
+            CheckLegend.Size = new Size(127, 24);
+            CheckLegend.TabIndex = 0;
+            CheckLegend.Text = "Pokaż legendę";
+            CheckLegend.UseVisualStyleBackColor = true;
+            CheckLegend.CheckedChanged += CheckLegend_CheckedChanged;
+            // 
             // panel4
             // 
+            panel4.Controls.Add(button1);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(1099, 72);
             panel4.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(944, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(127, 38);
+            button1.TabIndex = 0;
+            button1.Text = "Odśwież";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += ObliczMiejsceZerowe_Click;
             // 
             // tabPage3
             // 
@@ -264,6 +293,9 @@
             tabPage4.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -287,5 +319,7 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel3;
         private Panel panel4;
+        private CheckBox CheckLegend;
+        private Button button1;
     }
 }
