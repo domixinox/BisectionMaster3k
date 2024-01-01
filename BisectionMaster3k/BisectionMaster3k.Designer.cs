@@ -39,20 +39,20 @@
             inputRangeX2 = new TextBox();
             inputRangeX1 = new TextBox();
             tabPage2 = new TabPage();
-            tabPage4 = new TabPage();
+            tabPageGraph = new TabPage();
             tableLayoutPanel1 = new TableLayoutPanel();
             formsPlot1 = new ScottPlot.FormsPlot();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
             CheckLegend = new CheckBox();
             panel4 = new Panel();
-            button1 = new Button();
+            BtnReset = new Button();
             tabPage3 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            tabPage4.SuspendLayout();
+            tabPageGraph.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -63,14 +63,14 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPageGraph);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1125, 852);
+            tabControl1.Size = new Size(1127, 853);
             tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -81,7 +81,7 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(1117, 819);
+            tabPage1.Size = new Size(1119, 820);
             tabPage1.TabIndex = 0;
             tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -168,21 +168,21 @@
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1117, 819);
+            tabPage2.Size = new Size(1119, 820);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "OUTPUT";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tabPageGraph
             // 
-            tabPage4.Controls.Add(tableLayoutPanel1);
-            tabPage4.Location = new Point(4, 29);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1117, 819);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Wykres";
-            tabPage4.UseVisualStyleBackColor = true;
+            tabPageGraph.Controls.Add(tableLayoutPanel1);
+            tabPageGraph.Location = new Point(4, 29);
+            tabPageGraph.Name = "tabPageGraph";
+            tabPageGraph.Padding = new Padding(3);
+            tabPageGraph.Size = new Size(1119, 820);
+            tabPageGraph.TabIndex = 3;
+            tabPageGraph.Text = "Wykres";
+            tabPageGraph.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -196,7 +196,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
-            tableLayoutPanel1.Size = new Size(1111, 813);
+            tableLayoutPanel1.Size = new Size(1113, 814);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // formsPlot1
@@ -205,7 +205,7 @@
             formsPlot1.Location = new Point(5, 166);
             formsPlot1.Margin = new Padding(5, 4, 5, 4);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(1101, 643);
+            formsPlot1.Size = new Size(1103, 644);
             formsPlot1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -221,7 +221,7 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(1105, 156);
+            tableLayoutPanel2.Size = new Size(1107, 156);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // panel3
@@ -230,7 +230,8 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 81);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1099, 72);
+            panel3.Padding = new Padding(15);
+            panel3.Size = new Size(1101, 72);
             panel3.TabIndex = 0;
             // 
             // CheckLegend
@@ -238,9 +239,11 @@
             CheckLegend.AutoSize = true;
             CheckLegend.Checked = true;
             CheckLegend.CheckState = CheckState.Checked;
-            CheckLegend.Location = new Point(944, 23);
+            CheckLegend.Dock = DockStyle.Left;
+            CheckLegend.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            CheckLegend.Location = new Point(15, 15);
             CheckLegend.Name = "CheckLegend";
-            CheckLegend.Size = new Size(127, 24);
+            CheckLegend.Size = new Size(147, 42);
             CheckLegend.TabIndex = 0;
             CheckLegend.Text = "Pokaż legendę";
             CheckLegend.UseVisualStyleBackColor = true;
@@ -248,29 +251,32 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(BtnReset);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1099, 72);
+            panel4.Padding = new Padding(15);
+            panel4.Size = new Size(1101, 72);
             panel4.TabIndex = 1;
             // 
-            // button1
+            // BtnReset
             // 
-            button1.Location = new Point(944, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Odśwież";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += ObliczMiejsceZerowe_Click;
+            BtnReset.Dock = DockStyle.Left;
+            BtnReset.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnReset.Location = new Point(15, 15);
+            BtnReset.Name = "BtnReset";
+            BtnReset.Size = new Size(127, 42);
+            BtnReset.TabIndex = 0;
+            BtnReset.Text = "Reset";
+            BtnReset.UseVisualStyleBackColor = true;
+            BtnReset.Click += BtnReset_Click;
             // 
             // tabPage3
             // 
             tabPage3.Location = new Point(4, 29);
             tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1117, 819);
+            tabPage3.Size = new Size(1119, 820);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "O Programie";
             tabPage3.UseVisualStyleBackColor = true;
@@ -279,8 +285,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1125, 852);
+            ClientSize = new Size(1127, 853);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "BisectionMaster3k";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BisectionMaster3k";
@@ -290,7 +298,7 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            tabPage4.ResumeLayout(false);
+            tabPageGraph.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -313,13 +321,13 @@
         private RichTextBox inputRangeErrorMsg;
         private Panel panel1;
         private Panel panel2;
-        private TabPage tabPage4;
+        private TabPage tabPageGraph;
         private ScottPlot.FormsPlot formsPlot1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel3;
         private Panel panel4;
         private CheckBox CheckLegend;
-        private Button button1;
+        private Button BtnReset;
     }
 }

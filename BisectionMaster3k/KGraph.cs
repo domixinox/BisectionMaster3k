@@ -110,20 +110,11 @@ namespace BisectionMaster3k
             //
             // Legend
             //
-            
-            legend = KPlot.Legend(enable: true);
-            legend.Orientation = ScottPlot.Orientation.Vertical;
-            legend.Location = Alignment.LowerRight;
-            legend.IsVisible = yes;
+
+            legend = KPlot.Legend(yes);
             KControl.Refresh();
         }
-        public void ToggleLegend(bool visible)
-        {
-           
-           legend.IsVisible=visible;
-           KControl.Refresh();
-
-        }
+        
         public void ShowRange(bool yes = true)
         {
             
@@ -151,6 +142,7 @@ namespace BisectionMaster3k
             vline2.IsVisible = yes;
             KControl.Refresh();
         }
+        
         public void ShowSpan(bool yes = true)
         {
             // Span
