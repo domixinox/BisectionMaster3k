@@ -124,10 +124,12 @@
 - liczbę iteracji
 - dokładność obliczeń:
 +delta* (do 0)?
+(do 0 się nie da, przykładami są 0.001, 0.0001 ...)
 +E - szerokość przedziału?
+(ε' to błąd względny przy konwersjach między systemami liczbowymi)
 
-PS: tak miałem zapisane
-PSS: Można zmienić nazwe zakładki na Dane?</value>
+OK PS: tak miałem zapisane
+OK PSS: Można zmienić nazwe zakładki na Dane?</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Wykres ma zwracać:

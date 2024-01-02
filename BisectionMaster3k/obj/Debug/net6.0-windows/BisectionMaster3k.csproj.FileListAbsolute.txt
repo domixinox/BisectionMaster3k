@@ -35,3 +35,8 @@ C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\bin\
 C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.AssemblyReference.cache
 C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.CopyComplete
 C:\Users\Dominik\source\repos\domixinox\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.Properties.Resources.resources
+D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\bin\Debug\net6.0-windows\ScottPlot.dll
+D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\bin\Debug\net6.0-windows\ScottPlot.WinForms.dll
+D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.AssemblyReference.cache
+D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.Properties.Resources.resources
+D:\UP\Sezon_5\Teczki\MetNum\BisectionMaster3k\BisectionMaster3k\obj\Debug\net6.0-windows\BisectionMaster3k.csproj.CopyComplete
