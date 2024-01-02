@@ -37,11 +37,11 @@ namespace BisectionMaster3k
                 if (text[i] == '^')  // jeżeli jest potęga (poniżej wyjaśnie dlaczego)
                 {
                     int pwn = i;
-                    for
+                    //for
 
                     int power = text[i+1]-'0';
                        
-                    text = text.Remove(i, 1);
+                    //text = text.Remove(i, 1); proszę komentować linie jak coś nie działa i comitujesz zeby inni mogli tez pracowac
                     text = text.Remove(i, 1);
 
                     for (int g = 1; g < power; g++)

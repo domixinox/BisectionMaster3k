@@ -96,12 +96,13 @@ namespace BisectionMaster3k
         {
             this.Rx1 = x1;
             this.Rx2 = x2;
-
+            double tmp = 0;
+            if(Rx1 == 0) { tmp = Rx2; }
             //
             // Limits for X Axis 
             //
             //potrzebne żeby wykres jakoś się prezentował
-            KPlot.SetAxisLimitsX(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
+            KPlot.SetAxisLimitsX(((Math.Abs(Rx1 * 2) + tmp) * (-1)), Rx2 * 2);
             //KPlot.XAxis.SetBoundary(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
             KControl.Refresh();
         }
