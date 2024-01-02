@@ -100,9 +100,9 @@ namespace BisectionMaster3k
             //
             // Limits for X Axis 
             //
-            
+            //potrzebne żeby wykres jakoś się prezentował
             KPlot.SetAxisLimitsX(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
-            KPlot.XAxis.SetBoundary(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
+            //KPlot.XAxis.SetBoundary(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
             KControl.Refresh();
         }
         public void ShowLegend(bool yes = true)
@@ -262,7 +262,7 @@ namespace BisectionMaster3k
             // Axises Grid Ticks
             //
 
-            KPlot.Title(Stitle, bold: true, Color.Black, size: 32);
+            KPlot.Title(Stitle, bold: true, Color.Black, size: 26);
             KPlot.YAxis.Label(SAxisY, Color.Black, size: 24, bold: true);
             KPlot.XAxis.Label(SAxisX, Color.Black, size: 24, bold: true);
             KPlot.XAxis.MajorGrid(color: Color.FromArgb(100, Color.Gray), lineWidth: 1, lineStyle: LineStyle.Dash);
