@@ -91,6 +91,10 @@ namespace BisectionMaster3k
                 MessageBox.Show($"Substring: {sub}");
                 
                 //Coefficients.add({sub });
+
+                // Kacper: Być może o to chodzi
+                // Polynomial.Instance.Coefficients.Add(10)
+                // Polynomial.Instance.Powers.Add(10)
             }
             
                  

@@ -8,14 +8,27 @@
 namespace BisectionMaster3k
 {
   //-----------------------------------------------------------------------------
-  static class Bisection
+  public static class Bisection
   {
+    //*****************************************************************************
+    private static bool isOppositeSignedValues(double x1, double x2)
+    {
+      return Polynomial.Instance.f(x1) * Polynomial.Instance.f(x2) < 0;
+
+    }
+
+    //*****************************************************************************
+    private static bool isRangleTolerable(double xleft, double xright, double fPrec)
+    {
+      return Math.Abs(xleft - xright) <= fPrec;
+
+    }
 
     //*****************************************************************************
     // Bisection Method
     // [LEFT INCLUSIVE, RIGHT INCLUSIVE]
-    public static double fBisection(double xleft=0, double xright=10,
-      double fPrec=0.01, double iterations=100)
+    public static double fBisection(double xleft = 0, double xright = 10,
+      double fPrec = 0.01, double iterations = 100)
     {
       try
       {
@@ -24,7 +37,7 @@ namespace BisectionMaster3k
         // Bracketing Condition
         //
 
-        if (Polynomial.Instance.f(xleft) * Polynomial.Instance.f(xright) > 0)
+        if (! isOppositeSignedValues(xleft, xright))
         {
           throw new Exception(Exceptions.EBracketing);
 
@@ -83,7 +96,7 @@ namespace BisectionMaster3k
       // Determine Signs
       double newxleft;
       double newxright;
-      if (Polynomial.Instance.f(xleft) * Polynomial.Instance.f(xmid) < 0)
+      if (isOppositeSignedValues(xleft, xmid))
       {
         // Signs must differ
         newxleft = xleft;
@@ -101,13 +114,5 @@ namespace BisectionMaster3k
       return fBisection(newxleft, newxright, fPrec);
 
     }
-
-    //*****************************************************************************
-    private static bool isRangleTolerable(double xleft, double xright, double fPrec)
-    {
-      return Math.Abs(xleft - xright) <= fPrec;
-
-    }
-
   }
 }

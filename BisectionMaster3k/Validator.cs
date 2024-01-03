@@ -7,21 +7,34 @@
  * # Upewnij sie ze pola nie sa puste
  */
 
+using ScottPlot.Drawing.Colormaps;
 using System.Text.RegularExpressions;
 
 namespace BisectionMaster3k
 {
   //-----------------------------------------------------------------------------
-  static class Validator
+  public static class Validator
   {
-    static public string fIndepVar = "x";
-    static public string fAllowedChars = "1234567890-+*/^" + fIndepVar;
+
+    public static string fIndepVar = "x";
+    public static string fAllowedChars = "1234567890-+*/^" + fIndepVar;
 
     //*****************************************************************************
     static public bool isDeltaFormatOK(string sdelta)
     {
       Regex myRegex = new Regex("0{0,1}\\.0*1", RegexOptions.IgnoreCase);
-      return myRegex.IsMatch(sdelta);
+
+      bool isOK = myRegex.IsMatch(sdelta);
+
+      // Obsluga bledu
+      if (! isOK)
+      {
+        Exceptions.vActBadDeltaFormat();
+
+      }
+
+      // Zwracanko tak dodatkowo
+      return isOK;
 
     }
 
@@ -30,14 +43,33 @@ namespace BisectionMaster3k
     {
       double dleft = Convert.ToDouble(left);
       double dright = Convert.ToDouble(right);
-      return dleft < dright;
+
+      bool isOK = dleft < dright;
+
+      // Obsluga bledu
+      if (!isOK)
+      {
+        Exceptions.vActBracketingError();
+
+      }
+
+      return isOK;
 
     }
 
     //*****************************************************************************
-    static public bool isEmpty(string s)
+    public static bool isEmpty(string s, Exceptions.ExceptionsCallback callback)
     {
-      return s.Length == 0 ? true : false;
+      bool isOK = s.Length != 0 ? true : false;
+
+      // Obsluga bledu
+      if (!isOK)
+      {
+        Exceptions.vActEmptyString(callback);
+
+      }
+
+      return isOK;
 
     }
 
