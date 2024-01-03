@@ -39,6 +39,7 @@
             textBox2 = new TextBox();
             label26 = new Label();
             panel2 = new Panel();
+            label35 = new Label();
             ObliczMiejsceZerowe = new Button();
             panel13 = new Panel();
             label25 = new Label();
@@ -66,8 +67,22 @@
             tabPageWyniki = new TabPage();
             tableLayoutPanel4 = new TableLayoutPanel();
             panel6 = new Panel();
+            textBox3 = new TextBox();
+            label36 = new Label();
+            label37 = new Label();
+            label38 = new Label();
             label7 = new Label();
             panel5 = new Panel();
+            label34 = new Label();
+            panel11 = new Panel();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            label42 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            label41 = new Label();
+            panel15 = new Panel();
+            BtnSwitchWykres = new Button();
             label6 = new Label();
             tabPageGraph = new TabPage();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -75,7 +90,6 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
             label5 = new Label();
-            label4 = new Label();
             CheckMz = new CheckBox();
             CheckPotential = new CheckBox();
             CheckFunction = new CheckBox();
@@ -90,17 +104,14 @@
             tabPageAbout = new TabPage();
             tableLayoutPanel3 = new TableLayoutPanel();
             panel9 = new Panel();
-            label18 = new Label();
             label17 = new Label();
             label14 = new Label();
             label11 = new Label();
             panel8 = new Panel();
-            label19 = new Label();
             label16 = new Label();
             label13 = new Label();
             label10 = new Label();
             panel7 = new Panel();
-            label20 = new Label();
             label15 = new Label();
             label12 = new Label();
             label9 = new Label();
@@ -116,6 +127,9 @@
             tabPageWyniki.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             panel6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel11.SuspendLayout();
+            panel15.SuspendLayout();
             tabPageGraph.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -218,10 +232,11 @@
             inputDeltaErrorMsg.Location = new Point(586, 55);
             inputDeltaErrorMsg.Margin = new Padding(3, 4, 3, 4);
             inputDeltaErrorMsg.Name = "inputDeltaErrorMsg";
+            inputDeltaErrorMsg.ReadOnly = true;
             inputDeltaErrorMsg.Size = new Size(508, 85);
             inputDeltaErrorMsg.TabIndex = 100;
             inputDeltaErrorMsg.TabStop = false;
-            inputDeltaErrorMsg.Text = "Wszystko dobrze";
+            inputDeltaErrorMsg.Text = " Wszystko dobrze";
             // 
             // label27
             // 
@@ -235,10 +250,10 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(140, 55);
+            textBox2.Location = new Point(144, 55);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(440, 30);
+            textBox2.Size = new Size(436, 30);
             textBox2.TabIndex = 5;
             textBox2.Text = "0.0001";
             // 
@@ -248,12 +263,13 @@
             label26.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label26.Location = new Point(5, 58);
             label26.Name = "label26";
-            label26.Size = new Size(140, 23);
+            label26.Size = new Size(144, 23);
             label26.TabIndex = 100;
-            label26.Text = "rząd wielności =";
+            label26.Text = "Rząd wielności =";
             // 
             // panel2
             // 
+            panel2.Controls.Add(label35);
             panel2.Controls.Add(ObliczMiejsceZerowe);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 724);
@@ -262,14 +278,23 @@
             panel2.Size = new Size(1107, 75);
             panel2.TabIndex = 100;
             // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(97, 28);
+            label35.Name = "label35";
+            label35.Size = new Size(361, 23);
+            label35.TabIndex = 109;
+            label35.Text = "Dlaczego używamy inputów a nie numericów?";
+            // 
             // ObliczMiejsceZerowe
             // 
             ObliczMiejsceZerowe.AutoSize = true;
             ObliczMiejsceZerowe.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ObliczMiejsceZerowe.Location = new Point(860, 15);
+            ObliczMiejsceZerowe.Location = new Point(856, 12);
             ObliczMiejsceZerowe.Margin = new Padding(3, 4, 3, 4);
             ObliczMiejsceZerowe.Name = "ObliczMiejsceZerowe";
-            ObliczMiejsceZerowe.Size = new Size(239, 44);
+            ObliczMiejsceZerowe.Size = new Size(239, 50);
             ObliczMiejsceZerowe.TabIndex = 4;
             ObliczMiejsceZerowe.Text = "Znajdź Miejsce Zerowe";
             ObliczMiejsceZerowe.UseVisualStyleBackColor = true;
@@ -303,10 +328,11 @@
             inputIterationsErrorMsg.Location = new Point(586, 55);
             inputIterationsErrorMsg.Margin = new Padding(3, 4, 3, 4);
             inputIterationsErrorMsg.Name = "inputIterationsErrorMsg";
+            inputIterationsErrorMsg.ReadOnly = true;
             inputIterationsErrorMsg.Size = new Size(508, 85);
             inputIterationsErrorMsg.TabIndex = 100;
             inputIterationsErrorMsg.TabStop = false;
-            inputIterationsErrorMsg.Text = "Wszystko dobrze";
+            inputIterationsErrorMsg.Text = " Wszystko dobrze";
             // 
             // textBox1
             // 
@@ -315,6 +341,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(493, 30);
             textBox1.TabIndex = 6;
+            textBox1.Text = "1";
             // 
             // label28
             // 
@@ -334,7 +361,7 @@
             label29.Name = "label29";
             label29.Size = new Size(86, 23);
             label29.TabIndex = 103;
-            label29.Text = "iteracje =";
+            label29.Text = "Iteracje =";
             // 
             // panel12
             // 
@@ -387,10 +414,11 @@
             inputRangeErrorMsg.Location = new Point(586, 55);
             inputRangeErrorMsg.Margin = new Padding(3, 4, 3, 4);
             inputRangeErrorMsg.Name = "inputRangeErrorMsg";
+            inputRangeErrorMsg.ReadOnly = true;
             inputRangeErrorMsg.Size = new Size(508, 85);
             inputRangeErrorMsg.TabIndex = 100;
             inputRangeErrorMsg.TabStop = false;
-            inputRangeErrorMsg.Text = "Wszystko dobrze";
+            inputRangeErrorMsg.Text = " Wszystko dobrze";
             // 
             // inputRangeX2
             // 
@@ -400,6 +428,7 @@
             inputRangeX2.Size = new Size(240, 30);
             inputRangeX2.TabIndex = 7;
             inputRangeX2.Text = "100";
+            inputRangeX2.TextAlign = HorizontalAlignment.Center;
             // 
             // label24
             // 
@@ -419,6 +448,7 @@
             inputRangeX1.Size = new Size(240, 30);
             inputRangeX1.TabIndex = 8;
             inputRangeX1.Text = "0";
+            inputRangeX1.TextAlign = HorizontalAlignment.Center;
             // 
             // label30
             // 
@@ -478,10 +508,11 @@
             inputPolynomialErrorMsg.Location = new Point(586, 55);
             inputPolynomialErrorMsg.Margin = new Padding(3, 4, 3, 4);
             inputPolynomialErrorMsg.Name = "inputPolynomialErrorMsg";
+            inputPolynomialErrorMsg.ReadOnly = true;
             inputPolynomialErrorMsg.Size = new Size(508, 85);
             inputPolynomialErrorMsg.TabIndex = 100;
             inputPolynomialErrorMsg.TabStop = false;
-            inputPolynomialErrorMsg.Text = "Wszystko dobrze";
+            inputPolynomialErrorMsg.Text = " Wszystko dobrze";
             // 
             // inputPolynomial
             // 
@@ -504,7 +535,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label22.Location = new Point(6, 10);
+            label22.Location = new Point(5, 10);
             label22.Name = "label22";
             label22.Size = new Size(715, 54);
             label22.TabIndex = 3;
@@ -528,26 +559,70 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(panel6, 0, 1);
             tableLayoutPanel4.Controls.Add(panel5, 0, 0);
+            tableLayoutPanel4.Controls.Add(panel11, 0, 2);
+            tableLayoutPanel4.Controls.Add(panel15, 0, 3);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 4;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tableLayoutPanel4.Size = new Size(1113, 803);
             tableLayoutPanel4.TabIndex = 1;
             // 
             // panel6
             // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(textBox3);
+            panel6.Controls.Add(label36);
+            panel6.Controls.Add(label37);
+            panel6.Controls.Add(label38);
             panel6.Controls.Add(label7);
-            panel6.Controls.Add(label6);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(3, 83);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1107, 315);
+            panel6.Size = new Size(1107, 234);
             panel6.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(153, 55);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(942, 34);
+            textBox3.TabIndex = 113;
+            textBox3.Text = " brak";
+            // 
+            // label36
+            // 
+            label36.BorderStyle = BorderStyle.Fixed3D;
+            label36.Location = new Point(-8, 40);
+            label36.Name = "label36";
+            label36.Size = new Size(1123, 11);
+            label36.TabIndex = 111;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.Location = new Point(5, 5);
+            label37.Name = "label37";
+            label37.Size = new Size(163, 28);
+            label37.TabIndex = 110;
+            label37.Text = "Miejsce zerowe:";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label38.Location = new Point(10, 55);
+            label38.Name = "label38";
+            label38.Size = new Size(149, 28);
+            label38.TabIndex = 112;
+            label38.Text = "f(x) = 0 dla x=";
             // 
             // label7
             // 
@@ -559,20 +634,127 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(label34);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(1107, 74);
             panel5.TabIndex = 0;
             // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label34.Location = new Point(5, 10);
+            label34.Name = "label34";
+            label34.Size = new Size(365, 54);
+            label34.TabIndex = 4;
+            label34.Text = "Otrzymane wyniki";
+            // 
+            // panel11
+            // 
+            panel11.BorderStyle = BorderStyle.FixedSingle;
+            panel11.Controls.Add(textBox5);
+            panel11.Controls.Add(textBox4);
+            panel11.Controls.Add(label42);
+            panel11.Controls.Add(label39);
+            panel11.Controls.Add(label40);
+            panel11.Controls.Add(label41);
+            panel11.Dock = DockStyle.Fill;
+            panel11.Location = new Point(3, 323);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(1107, 234);
+            panel11.TabIndex = 2;
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox5.Location = new Point(428, 110);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(667, 34);
+            textBox5.TabIndex = 118;
+            textBox5.Text = "brak";
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Location = new Point(291, 55);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(804, 34);
+            textBox4.TabIndex = 117;
+            textBox4.Text = "brak";
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label42.Location = new Point(10, 110);
+            label42.Name = "label42";
+            label42.Size = new Size(422, 28);
+            label42.TabIndex = 116;
+            label42.Text = "Wartość funkcji dla wyznaczonego x, f(x) =";
+            // 
+            // label39
+            // 
+            label39.BorderStyle = BorderStyle.Fixed3D;
+            label39.Location = new Point(-9, 40);
+            label39.Name = "label39";
+            label39.Size = new Size(1123, 11);
+            label39.TabIndex = 114;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label40.Location = new Point(5, 5);
+            label40.Name = "label40";
+            label40.Size = new Size(406, 28);
+            label40.TabIndex = 113;
+            label40.Text = "Inne dane związane z miejscem zerowym:";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label41.Location = new Point(9, 55);
+            label41.Name = "label41";
+            label41.Size = new Size(293, 28);
+            label41.TabIndex = 115;
+            label41.Text = "Liczba wykonanych iteracji = ";
+            // 
+            // panel15
+            // 
+            panel15.Controls.Add(BtnSwitchWykres);
+            panel15.Controls.Add(label6);
+            panel15.Dock = DockStyle.Fill;
+            panel15.Location = new Point(3, 563);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1107, 237);
+            panel15.TabIndex = 3;
+            // 
+            // BtnSwitchWykres
+            // 
+            BtnSwitchWykres.AutoSize = true;
+            BtnSwitchWykres.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnSwitchWykres.Location = new Point(945, 174);
+            BtnSwitchWykres.Margin = new Padding(3, 4, 3, 4);
+            BtnSwitchWykres.Name = "BtnSwitchWykres";
+            BtnSwitchWykres.Size = new Size(150, 50);
+            BtnSwitchWykres.TabIndex = 9;
+            BtnSwitchWykres.Text = "Pokaż wykres";
+            BtnSwitchWykres.UseVisualStyleBackColor = true;
+            BtnSwitchWykres.Click += BtnSwitchWykres_Click;
+            // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(658, 73);
+            label6.Location = new Point(225, 30);
             label6.Name = "label6";
-            label6.Size = new Size(359, 115);
+            label6.Size = new Size(471, 138);
             label6.TabIndex = 8;
-            label6.Text = "Wynik ma zwracać:\r\n- wartość Mz\r\n- liczbe iteracji wyznaczającej Mz\r\n- wartość f(x) dla Mz \r\nPS: Można zmienić nazwę zakładki na Wyniki?\r\n";
+            label6.Text = "Wynik ma zwracać:\r\n- wartość Mz\r\n- liczbe iteracji wyznaczającej Mz\r\n- wartość f(x) dla Mz \r\n\r\nPS: Zmieni się wysokość wierszy jak już bd wiadomo co tu bd\r\n";
             // 
             // tabPageGraph
             // 
@@ -629,7 +811,6 @@
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
             panel3.Controls.Add(CheckMz);
             panel3.Controls.Add(CheckPotential);
             panel3.Controls.Add(CheckFunction);
@@ -652,14 +833,6 @@
             label5.Size = new Size(191, 23);
             label5.TabIndex = 7;
             label5.Text = "Ustawienia wyświetlania";
-            // 
-            // label4
-            // 
-            label4.BorderStyle = BorderStyle.Fixed3D;
-            label4.Location = new Point(-9, 69);
-            label4.Name = "label4";
-            label4.Size = new Size(1123, 11);
-            label4.TabIndex = 3;
             // 
             // CheckMz
             // 
@@ -851,8 +1024,8 @@
             // panel9
             // 
             panel9.AutoSize = true;
+            panel9.BackColor = Color.WhiteSmoke;
             panel9.BorderStyle = BorderStyle.FixedSingle;
-            panel9.Controls.Add(label18);
             panel9.Controls.Add(label17);
             panel9.Controls.Add(label14);
             panel9.Controls.Add(label11);
@@ -861,14 +1034,6 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(1113, 401);
             panel9.TabIndex = 2;
-            // 
-            // label18
-            // 
-            label18.BorderStyle = BorderStyle.Fixed3D;
-            label18.Location = new Point(-5, 0);
-            label18.Name = "label18";
-            label18.Size = new Size(1123, 11);
-            label18.TabIndex = 5;
             // 
             // label17
             // 
@@ -900,8 +1065,8 @@
             // panel8
             // 
             panel8.AutoSize = true;
+            panel8.BackColor = Color.WhiteSmoke;
             panel8.BorderStyle = BorderStyle.FixedSingle;
-            panel8.Controls.Add(label19);
             panel8.Controls.Add(label16);
             panel8.Controls.Add(label13);
             panel8.Controls.Add(label10);
@@ -910,14 +1075,6 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(1113, 196);
             panel8.TabIndex = 1;
-            // 
-            // label19
-            // 
-            label19.BorderStyle = BorderStyle.Fixed3D;
-            label19.Location = new Point(-5, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(1123, 11);
-            label19.TabIndex = 5;
             // 
             // label16
             // 
@@ -948,8 +1105,8 @@
             // 
             // panel7
             // 
+            panel7.BackColor = Color.WhiteSmoke;
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(label20);
             panel7.Controls.Add(label15);
             panel7.Controls.Add(label12);
             panel7.Controls.Add(label9);
@@ -958,14 +1115,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(1113, 196);
             panel7.TabIndex = 0;
-            // 
-            // label20
-            // 
-            label20.BorderStyle = BorderStyle.Fixed3D;
-            label20.Location = new Point(-5, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(1123, 11);
-            label20.TabIndex = 5;
             // 
             // label15
             // 
@@ -1025,6 +1174,12 @@
             tableLayoutPanel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
             tabPageGraph.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
@@ -1070,7 +1225,6 @@
         private CheckBox CheckPotential;
         private CheckBox CheckMz;
         private Button BtnSave;
-        private Label label4;
         private Label label5;
         private TableLayoutPanel tableLayoutPanel4;
         private Panel panel5;
@@ -1091,9 +1245,6 @@
         private Label label16;
         private Label label15;
         private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
         private RichTextBox inputPolynomialErrorMsg;
         private TextBox inputPolynomial;
         private RichTextBox inputIterationsErrorMsg;
@@ -1122,5 +1273,20 @@
         private Panel panel1;
         private Label label21;
         private Label label22;
+        private Panel panel11;
+        private Panel panel15;
+        private Label label35;
+        private Label label34;
+        private Label label36;
+        private Label label37;
+        private Label label38;
+        private Label label42;
+        private Label label39;
+        private Label label40;
+        private Label label41;
+        private TextBox textBox3;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private Button BtnSwitchWykres;
     }
 }

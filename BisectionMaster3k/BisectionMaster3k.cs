@@ -70,6 +70,7 @@ namespace BisectionMaster3k
             CheckMzLine.Visible = false;
             CheckPotential.Visible = false;
             tabPageGraph.Enabled = false;
+            tabPageWyniki.Enabled = false;
         }
 
         private void ObliczMiejsceZerowe_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace BisectionMaster3k
             CheckMz.Visible = false;
             CheckMzLine.Visible = false;
             CheckPotential.Visible = false;
+            tabPageWyniki.Enabled = false;
             tabPageGraph.Enabled = false;
             //********************************************************
             x1 = 0;
@@ -150,7 +152,8 @@ namespace BisectionMaster3k
             }
 
             MessageBox.Show(x.ToString());
-
+            tabPageWyniki.Enabled = true;
+            tabControl1.SelectedTab = tabPageWyniki;
             y = 0;
 
             //
@@ -463,6 +466,11 @@ namespace BisectionMaster3k
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnSwitchWykres_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPageGraph;
         }
     }
 }
