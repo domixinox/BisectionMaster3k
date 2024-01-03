@@ -1,4 +1,4 @@
-﻿using BisectionMaster3k.Datatypes;
+using BisectionMaster3k.Datatypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,93 +19,121 @@ namespace BisectionMaster3k
     /**
      * Klasa Parser - Cele:
      * #Parsuje tekst
+     * PS:Jak narazie nie zalecam robić skomplikowanych obliczeń na potęgach jak x^(2+2), kod zrobi kaboom
+     * PSS: Nie ma nawiasów w walidatorze, Tak ma być?
+     * PSSS: A za tamto nie działanie projektu to przepraszam, pętla for umknęła się gdy robiłem porządki
      */
     static class Parser
     {
+
+
+
+
+     
         
 
-
-
-
-
-
-       static public void LeParse(string text,string a)
+        public static double ParsePolynomialToDouble(string polynomial,double Number_in_x)
         {
+            double result = 0.0;
 
-            for (int i = 0; i < text.Length; i++)// czyta cały tekst literka po literce
+            if (polynomial.Contains("x^-")) //Tylko na chwilę warunek by potęgi nie były ujemne, później użyje klasy
             {
-                if (text[i] == '^')  // jeżeli jest potęga (poniżej wyjaśnie dlaczego)
-                {
-                    int pwn = i;
-                    //for
+                MessageBox.Show("Potęga ujemna detected, opinion rejected"); //vActPowersNegative()
+                return result;  
+            }
+           if (polynomial.StartsWith("+")) //Taki kod mam że jak dam plusa na początku to cały process idzie kaboom
+            {
+                polynomial = polynomial.Remove(0,1);
+            }
 
-                    int power = text[i+1]-'0';
-                       
-                    //text = text.Remove(i, 1); proszę komentować linie jak coś nie działa i comitujesz zeby inni mogli tez pracowac
-                    text = text.Remove(i, 1);
+            if (!polynomial.Contains("x"))        // Jeżeli nie ma x to daje stałą
+            {
+                double.TryParse(polynomial, out double constant);
+                    return constant;
+              
+            }
 
-                    for (int g = 1; g < power; g++)
+            string[] Seperated_Things = polynomial.Split('+', '-'); // Wielkie dzielenie do obliczeń
+
+            foreach (string Looped in Seperated_Things) 
+            {
+                string StringToParse = Looped.Trim(); // Trim do usuwania spacji gdyby użytkownik by dał
+
+               
+                    double coefficient = 1.0;
+                    int power;                      
+                //Wielka magia sortowania co jak i gdzie
+
+                    if (StringToParse.StartsWith("x^"))
                     {
-                        text = text.Insert(i,"*x");
+                        string[] parts = StringToParse.Split("x^", StringSplitOptions.None);
+                        
+                        power = int.Parse(parts[1]);  //Powers.add?
+                }
+
+                    else if (StringToParse.StartsWith("x"))
+                    {
+                        coefficient = 1.0; // Coefficent.add?
+                    power = GetPower(StringToParse.Substring(1));  //Powers.add?
+                }
+                    else if (StringToParse.StartsWith("-x"))
+                    {
+                        coefficient = -1.0; // Coefficent.add?
+                    power = GetPower(StringToParse.Substring(2));  //Powers.add?
+                }
+                
+                else if (StringToParse.Contains("x^"))
+                    {
+                        string[] parts = StringToParse.Split(new string[] { "x^" }, StringSplitOptions.None);
+                        coefficient = double.Parse(parts[0]); // Coefficent.add?
+                        power = int.Parse(parts[1]);        //Powers.add?
+                    }
+                    else if (StringToParse.EndsWith("x"))
+                    {
+                        string[] parts = StringToParse.Split('x');
+                        coefficient = double.Parse(parts[0]); // Coefficent.add?
+                    power = 1;  //Powers.add?
+                }
+                    else
+                    {
+                        if (double.TryParse(StringToParse, out double constant))
+                        {
+                            result += constant;  //Constant.add?
+                        continue;
+                        }
+                        else
+                        {
+                        return 0;
+                        }
                     }
 
-
-
-                }
-            }
-            for (int i = 0; i < text.Length; i++)// Znowu czyta cały tekst literka po literce
-            {
-                if (text[i] == 'x') //jeżeli jest x to wymien na string "a" podany wczesniej w fukcji LeParse
-                {
-
-                    text = text.Remove(i, 1);
-                    text = text.Insert(i, a);
-
-
-
-                }
-
-            }
-
-
-            DataTable dt = new DataTable();
-            var test = dt.Compute(text, ""); //Compute Nie może potęgować wieć zamieniłem cały process 
-
-
-
-            
-
-            MessageBox.Show(test.ToString());
-
-
-
-        }
-
-        static public void LeParse2(string text)
-        {
-           
-               
-                    string[] subs = text.Split("x", '\t');
-            foreach (var sub in subs)
-            {
-                MessageBox.Show($"Substring: {sub}");
+                    result += coefficient * Math.Pow(Number_in_x, power);
+                    
                 
-                //Coefficients.add({sub });
-
-                // Kacper: Być może o to chodzi
-                // Polynomial.Instance.Coefficients.Add(10)
-                // Polynomial.Instance.Powers.Add(10)
             }
-            
-                 
-                  
-                   
-              
-
-
-
-
+            MessageBox.Show(result.ToString());
+            return result;
+           
         }
+        private static int GetPower(string powerValue) // jak potęga 0 lub jeden== jeden jak nie to parsuje do INT
+        {
+           // if(int.Parse(powerValue.Trim()) < 0)
+            //{
+              //Exceptions.vActPowersNegative();
+            //}
+
+            
+            if (string.IsNullOrWhiteSpace(powerValue))
+            {
+                return 1;
+            }
+            else
+            {
+                return int.Parse(powerValue.Trim());
+            }
+        }
+
+
 
 
 
