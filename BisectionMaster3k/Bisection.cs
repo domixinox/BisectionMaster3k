@@ -76,7 +76,7 @@ namespace BisectionMaster3k
       // Find Midpoint
       //
 
-      double xmid = xleft / 2 + xright / 2;
+      double xmid = xleft / 2.0 + xright / 2.0;
 
       //
       // Is Midpoint < Precision required ?
@@ -111,7 +111,7 @@ namespace BisectionMaster3k
 
       }
 
-      return fBisection(newxleft, newxright, fPrec);
+      return fBisection(newxleft, newxright, fPrec, iterations-1);
 
     }
   }

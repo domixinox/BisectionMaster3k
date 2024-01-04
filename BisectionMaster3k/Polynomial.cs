@@ -95,6 +95,7 @@ namespace BisectionMaster3k
 
     //*****************************************************************************
     // COMPUTE DEGREE of F(x)
+    // Funkcja nieuzywana, tak o dodatkowo
     public double dDegree()
     {
       // Prevent IndexOutOfRangeException

@@ -14,16 +14,25 @@ namespace BisectionMaster3k
 
 
 
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    /**
-     * Klasa Parser - Cele:
-     * #Parsuje tekst
-     * PS:Jak narazie nie zalecam robić skomplikowanych obliczeń na potęgach jak x^(2+2), kod zrobi kaboom
-     * PSS: Nie ma nawiasów w walidatorze, Tak ma być?
-     * PSSS: A za tamto nie działanie projektu to przepraszam, pętla for umknęła się gdy robiłem porządki
-     */
-    static class Parser
+  /**
+   * Klasa Parser - Cele:
+   * #Parsuje tekst
+   * PS:Jak narazie nie zalecam robić skomplikowanych obliczeń na potęgach jak x^(2+2), kod zrobi kaboom
+   * PSS: Nie ma nawiasów w walidatorze, Tak ma być?
+   * Kacper: Jakich nawiasów w walidatorze? Chodzi o klasę Validator.cs?
+   * PSSS: A za tamto nie działanie projektu to przepraszam, pętla for umknęła się gdy robiłem porządki
+   * Kacper: #1 czy parser oblicza f(x) ?
+   * Kacper: umawialiśmy się, że parser nie oblicza f(x)
+   * Kacper: #2 parser powinien wkładać (.Add) współczynniki (obiekty typu double)
+   * Kacper: do Polynomial.Instance.Coefficients
+   * Kacper: #3 parser powinien wkładać (.Add) potęgi (obiekty typu double)
+   * Kacper: do Polynomial.Instance.Powers
+   * Kacper: #4 Klasa Polynomial z pliku Polynomial.cs oblicza f(x)
+   * Kacper: tam jest definicja " public double f(double x, int expr = 0) "
+   */
+  static class Parser
     {
 
 

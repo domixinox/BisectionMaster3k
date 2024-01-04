@@ -85,7 +85,7 @@ namespace BisectionMaster3k
     public static void vActBadDeltaFormat()
     {
       isProgramRun = false;
-      parent.InputDeltaErrorMsg(EPowersNegativeMsg);
+      parent.InputDeltaErrorMsg(EBadDeltaMsg);
 
     }
 

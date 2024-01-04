@@ -216,7 +216,7 @@
       panel10.Margin = new Padding(3, 2, 3, 2);
       panel10.Name = "panel10";
       panel10.Size = new Size(966, 115);
-      panel10.TabIndex = 0;
+      panel10.TabIndex = 3;
       // 
       // label3
       // 
@@ -273,7 +273,7 @@
       panel2.Location = new Point(3, 538);
       panel2.Name = "panel2";
       panel2.Size = new Size(966, 57);
-      panel2.TabIndex = 100;
+      panel2.TabIndex = 4;
       // 
       // label35
       // 
@@ -309,7 +309,7 @@
       panel13.Margin = new Padding(3, 2, 3, 2);
       panel13.Name = "panel13";
       panel13.Size = new Size(966, 115);
-      panel13.TabIndex = 1;
+      panel13.TabIndex = 2;
       // 
       // label25
       // 
@@ -374,7 +374,7 @@
       panel12.Margin = new Padding(3, 2, 3, 2);
       panel12.Name = "panel12";
       panel12.Size = new Size(966, 115);
-      panel12.TabIndex = 2;
+      panel12.TabIndex = 1;
       // 
       // label2
       // 
@@ -420,7 +420,7 @@
       inputRangeX2.Location = new Point(284, 41);
       inputRangeX2.Name = "inputRangeX2";
       inputRangeX2.Size = new Size(210, 25);
-      inputRangeX2.TabIndex = 7;
+      inputRangeX2.TabIndex = 1;
       inputRangeX2.Text = "100";
       inputRangeX2.TextAlign = HorizontalAlignment.Center;
       // 
@@ -439,7 +439,7 @@
       inputRangeX1.Location = new Point(57, 41);
       inputRangeX1.Name = "inputRangeX1";
       inputRangeX1.Size = new Size(210, 25);
-      inputRangeX1.TabIndex = 8;
+      inputRangeX1.TabIndex = 0;
       inputRangeX1.Text = "0";
       inputRangeX1.TextAlign = HorizontalAlignment.Center;
       // 
@@ -466,7 +466,7 @@
       panel14.Margin = new Padding(3, 2, 3, 2);
       panel14.Name = "panel14";
       panel14.Size = new Size(966, 115);
-      panel14.TabIndex = 3;
+      panel14.TabIndex = 0;
       // 
       // label31
       // 

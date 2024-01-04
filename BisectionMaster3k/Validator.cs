@@ -80,15 +80,16 @@ namespace BisectionMaster3k
       // Sprawdz KAZDY Znak inputu uzytkownika
       for (int i = 0; i < fSignature.Length; i++)
       {
-        bool isOK = true;
+        bool isOK = false;
 
         // Sprawdz wzgledem Znakow Dozwolonych
+        // Jeden MUSI sie zgadzac
         for (int j = 0; j < fAllowedChars.Length; j++)
         {
-          if (fSignature[i] != fAllowedChars[j])
+          if (fSignature[i] == fAllowedChars[j])
           {
             // Oj! Niedozwolony Znak
-            isOK = false;
+            isOK = true;
             break;
 
           }
@@ -97,6 +98,7 @@ namespace BisectionMaster3k
 
         if (isOK)
         {
+          // Check INPUT next char
           continue;
 
         }
