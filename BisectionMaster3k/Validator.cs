@@ -4,10 +4,10 @@
 
 /**
  * Klasa Walidacji - Cele:
- * # Upewnij sie ze pola nie sa puste
+ * # Zapewnij wypelnienie pol tekstowych
+ * # Zapewnij poprawnosc pol tekstowych
  */
 
-using ScottPlot.Drawing.Colormaps;
 using System.Text.RegularExpressions;
 
 namespace BisectionMaster3k
@@ -18,6 +18,36 @@ namespace BisectionMaster3k
 
     public static string fIndepVar = "x";
     public static string fAllowedChars = "1234567890-+*/^" + fIndepVar;
+
+    //*****************************************************************************
+    // Validate Mathematical Operations on Polynomial
+    static public bool isMathematicalCorrect(Polynomial poly, double xleft,
+      Exceptions.ExceptionsCallback callback)
+    {
+      if (xleft < 0)
+      {
+        // Negative Range
+        for (int i = 0; i < poly.Powers.Count; i++)
+        {
+          // Is Any Power a Fraction
+          if (poly.Powers[i] != (int)poly.Powers[i])
+          {
+            // Prevent Square Rooting negative x
+            Exceptions.vActBadMaths(callback,
+              Exceptions.EBadMathsIndex.SquareRootingNegative);
+            return false;
+
+          }
+
+        }
+      }
+
+      //
+      // ...
+      //
+
+      return true;
+    }
 
     //*****************************************************************************
     static public bool isDeltaFormatOK(string sdelta)

@@ -31,6 +31,8 @@ namespace BisectionMaster3k
    * Kacper: do Polynomial.Instance.Powers
    * Kacper: #4 Klasa Polynomial z pliku Polynomial.cs oblicza f(x)
    * Kacper: tam jest definicja " public double f(double x, int expr = 0) "
+   * Kacper: #5 proponuję przypisywać nagłówki do metod MessageBox.Show()
+   * Kacper: szkoda czasu na domysły
    */
   static class Parser
     {

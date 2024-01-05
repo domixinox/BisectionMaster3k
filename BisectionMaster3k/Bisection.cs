@@ -10,6 +10,16 @@ namespace BisectionMaster3k
   //-----------------------------------------------------------------------------
   public static class Bisection
   {
+    // Parent reference, Main Form reference
+    private static BisectionMaster3k parent;
+
+    //*****************************************************************************
+    public static void init(BisectionMaster3k parent)
+    {
+      Bisection.parent = parent;
+
+    }
+
     //*****************************************************************************
     private static bool isOppositeSignedValues(double x1, double x2)
     {
@@ -28,7 +38,7 @@ namespace BisectionMaster3k
     // Bisection Method
     // [LEFT INCLUSIVE, RIGHT INCLUSIVE]
     public static double fBisection(double xleft = 0, double xright = 10,
-      double fPrec = 0.01, double iterations = 100)
+      double fPrec = 0.01, int iterations = 100)
     {
       try
       {
@@ -47,7 +57,7 @@ namespace BisectionMaster3k
         // Iterations
         //
 
-        if (iterations < 0)
+        if (iterations <= 0)
         {
           throw new Exception(Exceptions.EIterations);
 
@@ -85,6 +95,7 @@ namespace BisectionMaster3k
       // BASE CASE: Tolerance
       if (isRangleTolerable(xleft, xright, fPrec))
       {
+        parent.IReturnIterations = iterations;
         return xmid;
 
       }

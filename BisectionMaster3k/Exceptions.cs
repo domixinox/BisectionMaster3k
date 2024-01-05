@@ -11,6 +11,9 @@ namespace BisectionMaster3k
   //-----------------------------------------------------------------------------
   public static class Exceptions
   {
+    // Parent reference, Main Form reference
+    private static BisectionMaster3k parent;
+
     // Operatre on different Objects
     public delegate void ExceptionsCallback(string errorMsg);
 
@@ -20,6 +23,13 @@ namespace BisectionMaster3k
 
     // INTERRUPT PROGRAM FLOW
     public static bool isProgramRun = true;
+
+    // Scalability (future development): Different Function Types
+    public enum Functions { Polynomial };
+
+    //
+    // Error Types
+    //
 
     // Bracketing
     public const string EBracketing = "1";
@@ -61,15 +71,44 @@ namespace BisectionMaster3k
     public const string EEmptyString = "6";
     public static string EEmptyStringMsg = "Proszę coś wpisać";
 
-    public enum Functions { Polynomial };
+    // Function Mathematically Incorrect
+    public const string EBadMaths = "7";
 
-    // Parent reference, Main Form reference
-    private static BisectionMaster3k parent;
+    public enum EBadMathsIndex
+    {
+      SquareRootingNegative = 0,
+      DividingByZero = 1
+
+    };
+
+    public static string[] EBadMathsMsg =
+    {
+      "Funkcja i Przedział zakładają pierwiastkowanie liczby ujemnej"
+        + "\r\nProszę zmienić, np. przedział x>=0",
+      "Nie dzielimy przez zero"
+
+    };
+
+    // ^^^
+    // Error Types
+    // ^^^
 
     //*****************************************************************************
     public static void init(BisectionMaster3k parent)
     {
       Exceptions.parent = parent;
+
+    }
+
+    //*****************************************************************************
+    public static void vActBadMaths(ExceptionsCallback callback,
+      // Easy to pass Array Index ...
+      EBadMathsIndex errorMsgIndex)
+    {
+      isProgramRun = false;
+
+      // ... As and Enum Argument :)
+      callback(EBadMathsMsg[(int)errorMsgIndex]);
 
     }
 
