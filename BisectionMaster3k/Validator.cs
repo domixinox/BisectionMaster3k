@@ -52,7 +52,7 @@ namespace BisectionMaster3k
     //*****************************************************************************
     static public bool isDeltaFormatOK(string sdelta)
     {
-      Regex myRegex = new Regex("0{0,1}\\.0*1", RegexOptions.IgnoreCase);
+      Regex myRegex = new Regex("0{0,1}\\,0*1", RegexOptions.IgnoreCase);
 
       bool isOK = myRegex.IsMatch(sdelta);
 
