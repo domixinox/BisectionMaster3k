@@ -43,26 +43,21 @@ namespace BisectionMaster3k
      
         
 
-        public static double ParsePolynomialToDouble(string polynomial,double Number_in_x)
+        public static double ParsePolynomialToDouble(string polynomial)
         {
             double result = 0.0;
 
-            if (polynomial.Contains("x^-")) //Tylko na chwilę warunek by potęgi nie były ujemne, później użyje klasy
+            if (polynomial.Contains("x^-")) 
             {
-                MessageBox.Show("Potęga ujemna detected, opinion rejected"); //vActPowersNegative()
-                return result;  
+                Exceptions.vActPowersNegative();
+                return 0;
             }
            if (polynomial.StartsWith("+")) //Taki kod mam że jak dam plusa na początku to cały process idzie kaboom
             {
                 polynomial = polynomial.Remove(0,1);
             }
 
-            if (!polynomial.Contains("x"))        // Jeżeli nie ma x to daje stałą
-            {
-                double.TryParse(polynomial, out double constant);
-                    return constant;
-              
-            }
+           
 
             string[] Seperated_Things = polynomial.Split('+', '-'); // Wielkie dzielenie do obliczeń
 
@@ -72,61 +67,58 @@ namespace BisectionMaster3k
 
                
                     double coefficient = 1.0;
-                    int power;                      
+                    double power;                      
                 //Wielka magia sortowania co jak i gdzie
 
                     if (StringToParse.StartsWith("x^"))
                     {
                         string[] parts = StringToParse.Split("x^", StringSplitOptions.None);
                         
-                        power = int.Parse(parts[1]);  //Powers.add?
+                        power = double.Parse(parts[1]); 
+                    Polynomial.Instance.Powers.Add(power);
                 }
 
                     else if (StringToParse.StartsWith("x"))
                     {
-                        coefficient = 1.0; // Coefficent.add?
-                    power = GetPower(StringToParse.Substring(1));  //Powers.add?
+                        coefficient = 1.0; 
+                    Polynomial.Instance.Coefficients.Add(coefficient);
+                    power = GetPower(StringToParse.Substring(1));  
+                    Polynomial.Instance.Powers.Add(power);
                 }
                     else if (StringToParse.StartsWith("-x"))
                     {
-                        coefficient = -1.0; // Coefficent.add?
-                    power = GetPower(StringToParse.Substring(2));  //Powers.add?
+                        coefficient = -1.0; 
+                    Polynomial.Instance.Coefficients.Add(coefficient);
+                    power = GetPower(StringToParse.Substring(2));  
+                    Polynomial.Instance.Powers.Add(power);
                 }
                 
                 else if (StringToParse.Contains("x^"))
                     {
                         string[] parts = StringToParse.Split(new string[] { "x^" }, StringSplitOptions.None);
-                        coefficient = double.Parse(parts[0]); // Coefficent.add?
-                        power = int.Parse(parts[1]);        //Powers.add?
-                    }
+                        coefficient = double.Parse(parts[0]);
+                    Polynomial.Instance.Coefficients.Add(coefficient);
+                    power = double.Parse(parts[1]);        
+                    Polynomial.Instance.Powers.Add(power);
+                }
                     else if (StringToParse.EndsWith("x"))
                     {
                         string[] parts = StringToParse.Split('x');
-                        coefficient = double.Parse(parts[0]); // Coefficent.add?
-                    power = 1;  //Powers.add?
+                        coefficient = double.Parse(parts[0]); 
+                    Polynomial.Instance.Coefficients.Add(coefficient);
+                    power = 1.0;  
+                    Polynomial.Instance.Powers.Add(power);
                 }
-                    else
-                    {
-                        if (double.TryParse(StringToParse, out double constant))
-                        {
-                            result += constant;  //Constant.add?
-                        continue;
-                        }
-                        else
-                        {
-                        return 0;
-                        }
-                    }
+                   
 
-                    result += coefficient * Math.Pow(Number_in_x, power);
+             
                     
                 
             }
-            MessageBox.Show(result.ToString());
             return result;
            
         }
-        private static int GetPower(string powerValue) // jak potęga 0 lub jeden== jeden jak nie to parsuje do INT
+        private static double GetPower(string powerValue) // jak potęga 0 lub jeden== jeden jak nie to parsuje do Double
         {
            // if(int.Parse(powerValue.Trim()) < 0)
             //{
@@ -136,11 +128,11 @@ namespace BisectionMaster3k
             
             if (string.IsNullOrWhiteSpace(powerValue))
             {
-                return 1;
+                return 1.0;
             }
             else
             {
-                return int.Parse(powerValue.Trim());
+                return double.Parse(powerValue.Trim());
             }
         }
 
