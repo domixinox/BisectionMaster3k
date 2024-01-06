@@ -170,15 +170,27 @@ namespace BisectionMaster3k
             //
 
             // ( Patrz: Parser.cs )
-            // Parser.ParsePolynomialToDouble(inputPolynomial.Text, 0);
+            
+            Parser.ParsePolynomialToDouble(inputPolynomial.Text);
+            //======================================================================================================
+           // Problem#1Na większych wielomianach przedział nie działa(?)
+           // Problem#2:Pierwszy wpisany wielomian nie resestuje i nadpisuę następne
+           //PS: Nieraz nawet kiedy da się dowolny wielomian to przedział mu nie pasuję...
+               
+                //func1 = new Func<double, double?>((x) => Polynomial.Instance.f(x));
+              
+            //=========================================================================================================
+
+    
+
 
             // Testing
-            Polynomial.Instance.Coefficients.Add(10);
-            Polynomial.Instance.Powers.Add(0.5);
-            Polynomial.Instance.Coefficients.Add(1);
-            Polynomial.Instance.Powers.Add(0.5);
-            Polynomial.Instance.Coefficients.Add(-10);
-            Polynomial.Instance.Powers.Add(0);
+            // Polynomial.Instance.Coefficients.Add(10);
+            // Polynomial.Instance.Powers.Add(0.5);
+            // Polynomial.Instance.Coefficients.Add(1);
+            //Polynomial.Instance.Powers.Add(0.5);
+            //Polynomial.Instance.Coefficients.Add(-10);
+            //Polynomial.Instance.Powers.Add(0);
 
             // ^^^
             // Parser
@@ -195,6 +207,7 @@ namespace BisectionMaster3k
             callbacks += InputRangeErrorMsg;
 
             Validator.isMathematicalCorrect(Polynomial.Instance, x1, callbacks);
+            
 
             if (!Exceptions.isProgramRun)
             {
@@ -213,7 +226,7 @@ namespace BisectionMaster3k
             // Overwrite diterations on return
             x = Bisection.fBisection(x1, x2, delta, iterations);
 
-            if (!Exceptions.isProgramRun)
+           if (!Exceptions.isProgramRun)
             {
                 return;
 
@@ -268,7 +281,7 @@ namespace BisectionMaster3k
 
             // Funkcja wielomianu wrzucana odrazu //edit 2nd
             // Functions are defined as delegates with an input and output
-            func1 = new Func<double, double?>((x) => Math.Sin(x) * Math.Sin(x / 2));
+            func1 = new Func<double, double?>((x) => Math.Sin(x) * Math.Sin(x / 2)); //<======= nazwa func1 jest wykorzystana na lini kody 177
             // Nazwa wyswietlana w legendzie 
             fun1 = inputPolynomial.Text;
             //=======================================================================
