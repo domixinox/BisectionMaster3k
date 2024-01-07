@@ -117,11 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label4.Text" xml:space="preserve">
-    <value>inputText sa ukryte zostawiłem jakby trzeba było poprawić coś, ale teraz numeric działaja zamiast nich
-ogolnie to brakuje: mi danych z wielomianu do wykresu i danych o srodkach przedzialow z bisekcji
-</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Metodę Bisekcji można uznać za nudną, powtarzalną. 
 Podobnie jest z innymi, podobnymi co do czasochłonności, zadaniami matematycznymi powinna być ona rozwiązywana przez komputer.

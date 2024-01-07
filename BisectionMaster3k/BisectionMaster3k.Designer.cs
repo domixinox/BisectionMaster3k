@@ -304,9 +304,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(16, 12);
             label4.Name = "label4";
-            label4.Size = new Size(786, 46);
+            label4.Size = new Size(756, 23);
             label4.TabIndex = 5;
-            label4.Text = resources.GetString("label4.Text");
+            label4.Text = "ogolnie to brakuje: mi danych z wielomianu do wykresu i danych o srodkach przedzialow z bisekcji\r\n";
             label4.Visible = false;
             // 
             // ObliczMiejsceZerowe
@@ -584,7 +584,7 @@
             inputPolynomial.Name = "inputPolynomial";
             inputPolynomial.Size = new Size(515, 30);
             inputPolynomial.TabIndex = 9;
-            inputPolynomial.Text = "0x^2+0";
+            inputPolynomial.Text = "1x^2+1x+1";
             // 
             // panel1
             // 

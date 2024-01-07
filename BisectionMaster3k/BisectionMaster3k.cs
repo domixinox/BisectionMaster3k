@@ -250,11 +250,11 @@ namespace BisectionMaster3k
             tabControl1.SelectedTab = tabPageWyniki;
 
             // Wyniki - wypis
-            wynikiMZerowe.Text = x.ToString();//UserInterface.vFormatNumberPrecision(x, 4);
+            wynikiMZerowe.Text = Math.Round(x, precZero).ToString();//UserInterface.vFormatNumberPrecision(x, 4);
             wynikiLiczbaIteracji.Text = Bisection.IMyIterations.ToString();
 
             y = Polynomial.Instance.f(x);
-            wynikiWartoscFunkcji.Text = y.ToString();//UserInterface.vFormatNumberPrecision(y, 4); //Math.Round(y, precZero).ToString(); precZero = ZerosPrecision(delta) + 2 -> liczy liczbe zer po przecinku do wystapienia innej cyfry ; jezeli delta = 0.001 zwroci wynik np 9.9996
+            wynikiWartoscFunkcji.Text = Math.Round(y, precZero).ToString();//UserInterface.vFormatNumberPrecision(y, 4); //precZero = ZerosPrecision(delta) + 2 -> liczy liczbe zer po przecinku do wystapienia innej cyfry i zaokrogla do dej cyfry -1 miejsce; jezeli delta = 0.001 zwroci wynik np 9.9996
 
             //
             // Wykres Data - Data to rewrite with actual data 
