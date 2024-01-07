@@ -250,11 +250,11 @@ namespace BisectionMaster3k
             tabControl1.SelectedTab = tabPageWyniki;
 
             // Wyniki - wypis
-            wynikiMZerowe.Text = Math.Round(x, precZero).ToString();//UserInterface.vFormatNumberPrecision(x, 4);
+            wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, 4);
             wynikiLiczbaIteracji.Text = Bisection.IMyIterations.ToString();
 
             y = Polynomial.Instance.f(x);
-            wynikiWartoscFunkcji.Text = Math.Round(y, precZero).ToString();//UserInterface.vFormatNumberPrecision(y, 4); //precZero = ZerosPrecision(delta) + 2 -> liczy liczbe zer po przecinku do wystapienia innej cyfry i zaokrogla do dej cyfry -1 miejsce; jezeli delta = 0.001 zwroci wynik np 9.9996
+            wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, 4);
 
             //
             // Wykres Data - Data to rewrite with actual data 
@@ -262,8 +262,8 @@ namespace BisectionMaster3k
             // Miejsce zerowe
             if (!Double.IsNaN(x) && Double.IsFinite(x))
             {
-                MzX = new double[] { x };
-                MzY = new double[] { y };
+                MzX = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, 4)) };
+                MzY = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, 4)) };
 
                 CheckMz.Visible = true;
                 CheckMzLine.Visible = true;
