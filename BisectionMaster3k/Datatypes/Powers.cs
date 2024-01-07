@@ -50,6 +50,13 @@ namespace BisectionMaster3k.Datatypes
     }
 
     //*****************************************************************************
+    public void Clear()
+    {
+      values.Clear();
+
+    }
+
+    //*****************************************************************************
     // Shadow List<type>.Add()
     public void Add(T element)
     {

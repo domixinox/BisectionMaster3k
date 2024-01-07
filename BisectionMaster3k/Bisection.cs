@@ -10,36 +10,26 @@ namespace BisectionMaster3k
   //-----------------------------------------------------------------------------
   public static class Bisection
   {
-    // Parent reference, Main Form reference
-    private static BisectionMaster3k parent;
-
-    //*****************************************************************************
-    public static void init(BisectionMaster3k parent)
+    private static int iMyIterations;
+    public static int IMyIterations
     {
-      Bisection.parent = parent;
-
-    }
-
-    //*****************************************************************************
-    private static bool isOppositeSignedValues(double x1, double x2)
-    {
-      return Polynomial.Instance.f(x1) * Polynomial.Instance.f(x2) < 0;
-
-    }
-
-    //*****************************************************************************
-    private static bool isRangleTolerable(double xleft, double xright, double fPrec)
-    {
-      return Math.Abs(xleft - xright) <= fPrec;
-
+      get { return iMyIterations; }
     }
 
     //*****************************************************************************
     // Bisection Method
     // [LEFT INCLUSIVE, RIGHT INCLUSIVE]
     public static double fBisection(double xleft = 0, double xright = 10,
-      double fPrec = 0.01, int iterations = 100)
+      double fPrec = 0.01, int iterations = 100, bool isReset = true)
     {
+      if (isReset)
+      {
+        vResetIterations();
+
+      }
+
+      iMyIterations++;
+
       try
       {
 
@@ -49,6 +39,13 @@ namespace BisectionMaster3k
 
         if (! isOppositeSignedValues(xleft, xright))
         {
+          // Already Resolved
+          if (! Exceptions.isProgramRun)
+          {
+            throw new Exception("");
+
+          }
+
           throw new Exception(Exceptions.EBracketing);
 
         }
@@ -68,6 +65,10 @@ namespace BisectionMaster3k
       {
         switch (e.Message)
         {
+          // Already Resolved
+          case "":
+            return 0;
+
           // Bracketing Failure
           case Exceptions.EBracketing:
             Exceptions.vActBracketingError();
@@ -95,7 +96,6 @@ namespace BisectionMaster3k
       // BASE CASE: Tolerance
       if (isRangleTolerable(xleft, xright, fPrec))
       {
-        parent.IReturnIterations = iterations;
         return xmid;
 
       }
@@ -122,7 +122,31 @@ namespace BisectionMaster3k
 
       }
 
-      return fBisection(newxleft, newxright, fPrec, iterations-1);
+      return fBisection(newxleft, newxright, fPrec, iterations - 1, false);
+
+    }
+
+    //*****************************************************************************
+    private static void vResetIterations()
+    {
+      iMyIterations = 0;
+
+    }
+
+    //*****************************************************************************
+    private static bool isOppositeSignedValues(double x1, double x2)
+    {
+      // ... or is signed value and zero
+      double fx1 = Polynomial.Instance.f(x1);
+      double fx2 = Polynomial.Instance.f(x2);
+      return fx1 * fx2 <= 0;
+
+    }
+
+    //*****************************************************************************
+    private static bool isRangleTolerable(double xleft, double xright, double fPrec)
+    {
+      return Math.Abs(xleft - xright) <= fPrec;
 
     }
   }

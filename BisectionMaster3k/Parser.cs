@@ -45,6 +45,10 @@ namespace BisectionMaster3k
 
         public static double ParsePolynomialToDouble(string polynomial)
         {
+            // Kacper: Muszę dodać, żeby działało
+            Polynomial.Instance.Coefficients.Clear();
+            Polynomial.Instance.Powers.Clear();
+
             double result = 0.0;
 
             if (polynomial.Contains("x^-")) 

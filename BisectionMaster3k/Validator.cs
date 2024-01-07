@@ -17,7 +17,7 @@ namespace BisectionMaster3k
   {
 
     public static string fIndepVar = "x";
-    public static string fAllowedChars = "1234567890-+*/^" + fIndepVar;
+    public static string fAllowedChars = "1234567890-+*/^,." + fIndepVar;
 
     //*****************************************************************************
     // Validate Mathematical Operations on Polynomial
@@ -52,7 +52,7 @@ namespace BisectionMaster3k
     //*****************************************************************************
     static public bool isDeltaFormatOK(string sdelta)
     {
-      Regex myRegex = new Regex("0{0,1}\\,0*1", RegexOptions.IgnoreCase);
+      Regex myRegex = new Regex("0{0,1}[\\.,]0*1", RegexOptions.IgnoreCase);
 
       bool isOK = myRegex.IsMatch(sdelta);
 
@@ -118,7 +118,7 @@ namespace BisectionMaster3k
         {
           if (fSignature[i] == fAllowedChars[j])
           {
-            // Oj! Niedozwolony Znak
+            // Ok! ten znak dozwolony
             isOK = true;
             break;
 
@@ -134,6 +134,7 @@ namespace BisectionMaster3k
         }
 
         // Niedozwolony Znak
+        Exceptions.vActBadFunctionSygnature();
         return false;
 
       }
