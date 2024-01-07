@@ -80,9 +80,9 @@ namespace BisectionMaster3k
             //
             //FIXED Values
             KPlot.YAxis.SetZoomInLimit(10);
-            KPlot.YAxis.SetZoomOutLimit(1000);
+            KPlot.YAxis.SetZoomOutLimit(10000);
             KPlot.XAxis.SetZoomInLimit(0.01);
-            KPlot.XAxis.SetZoomOutLimit(1000);
+            KPlot.XAxis.SetZoomOutLimit(10000);
 
             //
             // 0 Axises
@@ -170,20 +170,20 @@ namespace BisectionMaster3k
             }
             KControl.Refresh();
         }
-        public void AddMz(double[] MzX, double[] MzY)
+        public void AddMz(double[] MzX, double[] MzY, int prec)
         {
             this.MzX = MzX;
             this.MzY = MzY;
             this.Mzlabels = new string[MzX.Length];
             for(int i = 0; i < MzX.Length; i++) 
             {
-                this.Mzlabels[i] = $"({MzX[i]}; {MzY[i]})";
+                this.Mzlabels[i] = $"({Math.Round(MzX[i], prec)}; {Math.Round(MzY[i], prec)})";
             }
             
         }
-        public void ShowMzPlot(bool yes=true, bool singlePoint=true)
+        public void ShowMzPlot(bool yes=true, int prec=2, bool singlePoint=true)
         {
-            string MzLabel = $"Miejsce zerowe X = {MzX[0]}";
+            string MzLabel = $"Miejsce zerowe X = {Math.Round(MzX[0], prec)}";
             double[] TMzX = { MzX[0] };
             double[] TMzY = { MzY[0] };
             string[] TMzlabels = { Mzlabels[0] };
@@ -206,14 +206,14 @@ namespace BisectionMaster3k
             zero.IsVisible = yes;
             KControl.Refresh();
         }
-        public void AddPotentialMz(double[] PMzX, double[] PMzY)
+        public void AddPotentialMz(double[] PMzX, double[] PMzY, int prec)
         {
             this.PMzX = PMzX;
             this.PMzY = PMzY;
             this.PMzlabels = new string[PMzX.Length];
             for (int i = 0; i < PMzX.Length; i++)
             {
-                this.PMzlabels[i] = $"({PMzX[i]}; {PMzY[i]})";
+                this.PMzlabels[i] = $"({Math.Round(PMzX[i], prec)}; {Math.Round(PMzY[i], prec)})";
             }
         }
         public void ShowPotentialPlot(bool yes=true)
