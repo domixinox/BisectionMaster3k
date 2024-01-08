@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>ogolnie to brakuje: mi danych z wielomianu do wykresu i danych o srodkach przedzialow z bisekcji
+Kacper: Właściwość Bisection.DRangeCenters to List&lt;double&gt;, przechowuje potencjalne m. zerowe
+Kacper: Dane to zakres [x1, x2] oraz Polynomial.Instance.f dla kolejnych x'ów
+</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Metodę Bisekcji można uznać za nudną, powtarzalną. 
 Podobnie jest z innymi, podobnymi co do czasochłonności, zadaniami matematycznymi powinna być ona rozwiązywana przez komputer.

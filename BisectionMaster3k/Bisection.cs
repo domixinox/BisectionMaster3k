@@ -10,6 +10,12 @@ namespace BisectionMaster3k
   //-----------------------------------------------------------------------------
   public static class Bisection
   {
+    private static List<double> dRangeCenters = new List<double>();
+    public static List<double> DRangeCenters
+    {
+      get { return dRangeCenters; }
+    }
+
     private static int iMyIterations;
     public static int IMyIterations
     {
@@ -24,6 +30,7 @@ namespace BisectionMaster3k
     {
       if (isReset)
       {
+        dRangeCenters.Clear();
         vResetIterations();
 
       }
@@ -99,6 +106,8 @@ namespace BisectionMaster3k
         return xmid;
 
       }
+
+      dRangeCenters.Add(xmid);
 
       //
       // Prepare New Recursion
