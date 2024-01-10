@@ -1,4 +1,5 @@
-﻿using ScottPlot;
+﻿using BisectionMaster3k.Frontend;
+using ScottPlot;
 using ScottPlot.Plottable;
 using ScottPlot.Renderable;
 using System;
@@ -79,10 +80,10 @@ namespace BisectionMaster3k
             // Zoom 
             //
             //FIXED Values
-            KPlot.YAxis.SetZoomInLimit(10);
-            KPlot.YAxis.SetZoomOutLimit(10000);
-            KPlot.XAxis.SetZoomInLimit(0.01);
-            KPlot.XAxis.SetZoomOutLimit(10000);
+            //KPlot.YAxis.SetZoomInLimit(10);
+            //KPlot.YAxis.SetZoomOutLimit(10000);
+            //KPlot.XAxis.SetZoomInLimit(0.01);
+            //KPlot.XAxis.SetZoomOutLimit(10000);
 
             //
             // 0 Axises
@@ -96,14 +97,19 @@ namespace BisectionMaster3k
         {
             this.Rx1 = x1;
             this.Rx2 = x2;
-            double tmp = 0;
-            if(Rx1 == 0) { tmp = Rx2; }
+            //double tmp = 0;
+            //if(Rx1 == 0) { tmp = Rx2; }
             //
             // Limits for X Axis 
             //
             //potrzebne żeby wykres jakoś się prezentował
-            KPlot.SetAxisLimitsX(((Math.Abs(Rx1 * 2) + tmp) * (-1)), Rx2 * 2);
+            //KPlot.SetAxisLimitsX(((Math.Abs(Rx1 * 2) + tmp) * (-1)), Rx2 * 2);
             //KPlot.XAxis.SetBoundary(Math.Abs(Rx1 * 2) * (-1), Rx2 * 2);
+            KControl.Refresh();
+        }
+        public void FitData()
+        {
+            KPlot.AxisAutoX(); 
             KControl.Refresh();
         }
         public void ShowLegend(bool yes = true)
@@ -177,13 +183,13 @@ namespace BisectionMaster3k
             this.Mzlabels = new string[MzX.Length];
             for(int i = 0; i < MzX.Length; i++) 
             {
-                this.Mzlabels[i] = $"({Math.Round(MzX[i], prec)}; {Math.Round(MzY[i], prec)})";
+                this.Mzlabels[i] = $"({MzX[i]}; {MzY[i]})";
             }
             
         }
         public void ShowMzPlot(bool yes=true, int prec=2, bool singlePoint=true)
         {
-            string MzLabel = $"Miejsce zerowe X = {Math.Round(MzX[0], prec)}";
+            string MzLabel = $"Miejsce zerowe X = {MzX[0]}";
             double[] TMzX = { MzX[0] };
             double[] TMzY = { MzY[0] };
             string[] TMzlabels = { Mzlabels[0] };
@@ -206,27 +212,27 @@ namespace BisectionMaster3k
             zero.IsVisible = yes;
             KControl.Refresh();
         }
-        public void AddPotentialMz(double[] PMzX, double[] PMzY, int prec)
+        public void AddPotentialMz(double[] PMzX, double[] PMzY, string[] PMzlabels, int prec)
         {
             this.PMzX = PMzX;
             this.PMzY = PMzY;
-            this.PMzlabels = new string[PMzX.Length];
-            for (int i = 0; i < PMzX.Length; i++)
-            {
-                this.PMzlabels[i] = $"({Math.Round(PMzX[i], prec)}; {Math.Round(PMzY[i], prec)})";
-            }
+            this.PMzlabels = PMzlabels;
+            //for (int i = 0; i < PMzX.Length; i++)
+            //{
+            //    this.PMzlabels[i] = $"({UserInterface.vFormatNumberPrecision(PMzX[i], prec)}; {UserInterface.vFormatNumberPrecision(PMzY[i], prec)})";
+            //}
         }
         public void ShowPotentialPlot(bool yes=true)
         {
-            string MzLabel = "Potencjalne miejsca zerowe";
+            string MzLabel = "Potencjalne miejsca zerowe (iteracje)";
             //
             // Plot for Potential Zero Points that were calculated
             //
-            //SET (PMxX,PMzY,PMzLabels)
-            pzero = KPlot.AddScatter(PMzX, PMzY, color: Color.Gray, 2, 8, MarkerShape.filledCircle, label: MzLabel);
+            //SET (PMxX,PMzY,PMzLabels) AddScatter()
+            pzero = KPlot.AddScatterPoints(PMzX, PMzY, color: Color.Orange, 8, /*8,*/ MarkerShape.filledCircle, label: MzLabel);
             pzero.DataPointLabels = PMzlabels;
             pzero.DataPointLabelFont.Size = 12;
-            pzero.DataPointLabelFont.Alignment = Alignment.UpperLeft;
+            pzero.DataPointLabelFont.Alignment = Alignment.LowerRight;
             pzero.IsVisible = yes;
             KControl.Refresh();
         }
@@ -242,7 +248,7 @@ namespace BisectionMaster3k
             //
             // Function plot - only line
             //
-            Pline = KPlot.AddScatterLines(funX, funY, Color.Blue, 3, LineStyle.Solid, label: $"Funkcja: {funS}");
+            Pline = KPlot.AddScatterLines(funX, funY, Color.Blue, 2, LineStyle.Solid, label: $"Funkcja: {funS}");
             Pline.IsVisible = yes;
             KControl.Refresh();
         }
@@ -251,7 +257,7 @@ namespace BisectionMaster3k
             //
             // Function plot based on Func - only line
             //
-            PFline = KPlot.AddFunction(funkcja, lineWidth: 3, color: Color.Blue);
+            PFline = KPlot.AddFunction(funkcja, lineWidth: 2, color: Color.Blue);
             PFline.Label = "Funkcja: " + label;
             PFline.IsVisible = yes;
             KControl.Refresh();
