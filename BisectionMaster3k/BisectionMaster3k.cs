@@ -84,7 +84,7 @@ namespace BisectionMaster3k
             // Reset danych
             //
             dataGridView1.Rows.Clear();
-            
+
             CheckMz.Visible = false;
             CheckMzLine.Visible = false;
             CheckPotential.Visible = false;
@@ -95,7 +95,7 @@ namespace BisectionMaster3k
             x2 = Convert.ToDouble(numericX2.Text);
             int iterations = Convert.ToInt32(numericterations.Text);
             double delta = Convert.ToDouble(numericDelta.Text);
-            precZero = ZerosPrecision(delta) + 2;
+            precZero = ZerosPrecision(delta) + 1;
             double x = 0;
             double y = 0;
 
@@ -112,13 +112,13 @@ namespace BisectionMaster3k
             //funY = null;
             //// Nazwa wyswietlana w legendzie
             //fun = null;
-
+            PMzlabels = null;
             // Funkcja wielomianu wrzucana odrazu
             func1 = null;
             // Nazwa wyswietlana w legendzie
             fun1 = null;
             //********************************************************
-
+            
             //
             // Walidator
             //
@@ -254,8 +254,7 @@ namespace BisectionMaster3k
             for (int i = 0; i < Bisection.DRangeCenters.Count; i++)
             {
                 sInfo += "\r\nx" + (i + 1).ToString() + " = " + Bisection.DRangeCenters[i].ToString();
-                // Add a row to the DataGridView with the data
-                
+              
             }
 
             MessageBox.Show(sInfo, "Potencjalne M. Zerowe");
@@ -264,11 +263,11 @@ namespace BisectionMaster3k
             tabControl1.SelectedTab = tabPageWyniki;
 
             // Wyniki - wypis
-            wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, 4);
+            wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, precZero);
             wynikiLiczbaIteracji.Text = Bisection.IMyIterations.ToString();
 
             y = Polynomial.Instance.f(x);
-            wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, 4);
+            wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, precZero);
 
             //
             // Wykres Data - Data to rewrite with actual data 
@@ -276,25 +275,24 @@ namespace BisectionMaster3k
             // Miejsce zerowe
             if (!Double.IsNaN(x) && Double.IsFinite(x))
             {
-                MzX = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, 4)) };
-                MzY = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, 4)) };
+                MzX = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, precZero)) };
+                MzY = new double[] { Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, precZero)) };
 
                 CheckMz.Visible = true;
                 CheckMzLine.Visible = true;
 
             }
 
-            // option to disply this?
-            // Potencjalne Miejsce zerowe //edit
+            // Potencjalne Miejsce zerowe 
             PzX = Bisection.DRangeCenters.ToArray();
             PzY = new double[PzX.Length];
             PMzlabels = new string[PzX.Length];
             for (int i = 0; i < PzX.Length; i++)
             {
-                
+
                 PzY[i] = Polynomial.Instance.f(PzX[i]);
-                PMzlabels[i] = (i+1).ToString(); //Mozna zmienić format label środków albo po prostu nie pokazywać
-                dataGridView1.Rows.Add(PMzlabels[i], PzX[i], PzY[i]);
+                PMzlabels[i] = (i + 1).ToString(); //Mozna zmienić format label środków albo po prostu nie pokazywać na wykresie nr iteracji
+                dataGridView1.Rows.Add(PMzlabels[i], Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero)));
             }
 
             CheckPotential.Visible = true;
@@ -612,7 +610,7 @@ namespace BisectionMaster3k
                         break;
                     }
                 }
-                else if (znak == ',')
+                else if (znak == ',' || znak == '.')
                 {
                     poPrzecinku = true;
                 }

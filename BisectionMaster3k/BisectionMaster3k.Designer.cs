@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BisectionMaster3k));
             tabControl1 = new TabControl();
             tabPageData = new TabPage();
@@ -82,6 +84,13 @@
             label40 = new Label();
             label41 = new Label();
             panel15 = new Panel();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            panel17 = new Panel();
+            label4 = new Label();
+            label6 = new Label();
+            panel18 = new Panel();
+            dataGridView1 = new DataGridView();
+            panel16 = new Panel();
             BtnSwitchWykres = new Button();
             tabPageGraph = new TabPage();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -114,7 +123,6 @@
             label15 = new Label();
             label12 = new Label();
             label9 = new Label();
-            dataGridView1 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPageData.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
@@ -134,6 +142,11 @@
             panel5.SuspendLayout();
             panel11.SuspendLayout();
             panel15.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            panel17.SuspendLayout();
+            panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel16.SuspendLayout();
             tabPageGraph.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -144,7 +157,6 @@
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -565,14 +577,16 @@
             tableLayoutPanel4.Controls.Add(panel5, 0, 0);
             tableLayoutPanel4.Controls.Add(panel11, 0, 2);
             tableLayoutPanel4.Controls.Add(panel15, 0, 3);
+            tableLayoutPanel4.Controls.Add(panel16, 0, 4);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 4;
+            tableLayoutPanel4.RowCount = 5;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel4.Size = new Size(1113, 803);
             tableLayoutPanel4.TabIndex = 1;
             // 
@@ -587,7 +601,7 @@
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(3, 83);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1107, 234);
+            panel6.Size = new Size(1107, 114);
             panel6.TabIndex = 1;
             // 
             // wynikiMZerowe
@@ -665,9 +679,9 @@
             panel11.Controls.Add(label40);
             panel11.Controls.Add(label41);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(3, 323);
+            panel11.Location = new Point(3, 203);
             panel11.Name = "panel11";
-            panel11.Size = new Size(1107, 234);
+            panel11.Size = new Size(1107, 194);
             panel11.TabIndex = 2;
             // 
             // wynikiWartoscFunkcji
@@ -730,19 +744,106 @@
             // 
             // panel15
             // 
-            panel15.Controls.Add(dataGridView1);
-            panel15.Controls.Add(BtnSwitchWykres);
+            panel15.Controls.Add(tableLayoutPanel3);
             panel15.Dock = DockStyle.Fill;
-            panel15.Location = new Point(3, 563);
+            panel15.Location = new Point(3, 403);
             panel15.Name = "panel15";
-            panel15.Size = new Size(1107, 237);
+            panel15.Size = new Size(1107, 315);
             panel15.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.Controls.Add(panel17, 0, 0);
+            tableLayoutPanel3.Controls.Add(panel18, 0, 1);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(0, 0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 85F));
+            tableLayoutPanel3.Size = new Size(1107, 315);
+            tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            panel17.BorderStyle = BorderStyle.FixedSingle;
+            panel17.Controls.Add(label4);
+            panel17.Controls.Add(label6);
+            panel17.Dock = DockStyle.Fill;
+            panel17.Location = new Point(3, 3);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1101, 41);
+            panel17.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Location = new Point(-8, 40);
+            label4.Name = "label4";
+            label4.Size = new Size(1123, 11);
+            label4.TabIndex = 115;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(5, 5);
+            label6.Name = "label6";
+            label6.Size = new Size(278, 28);
+            label6.TabIndex = 114;
+            label6.Text = "Potencjalne miejsca zerowe:";
+            // 
+            // panel18
+            // 
+            panel18.Controls.Add(dataGridView1);
+            panel18.Dock = DockStyle.Fill;
+            panel18.Location = new Point(3, 50);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(1101, 262);
+            panel18.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(1101, 262);
+            dataGridView1.TabIndex = 10;
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(BtnSwitchWykres);
+            panel16.Dock = DockStyle.Fill;
+            panel16.Location = new Point(3, 724);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(1107, 76);
+            panel16.TabIndex = 4;
             // 
             // BtnSwitchWykres
             // 
             BtnSwitchWykres.AutoSize = true;
             BtnSwitchWykres.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnSwitchWykres.Location = new Point(926, 173);
+            BtnSwitchWykres.Location = new Point(926, 12);
             BtnSwitchWykres.Margin = new Padding(3, 4, 3, 4);
             BtnSwitchWykres.Name = "BtnSwitchWykres";
             BtnSwitchWykres.Size = new Size(170, 51);
@@ -1137,19 +1238,6 @@
             label9.TabIndex = 0;
             label9.Text = "Metoda Bisekcji, czyli Przybliżanie m. zerowego";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(70, 17);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(503, 207);
-            dataGridView1.TabIndex = 10;
-            // 
             // BisectionMaster3k
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1190,7 +1278,13 @@
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel15.ResumeLayout(false);
-            panel15.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
+            panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
             tabPageGraph.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
@@ -1207,7 +1301,6 @@
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1299,5 +1392,11 @@
         private NumericUpDown numericX1;
         private NumericUpDown numericX2;
         private DataGridView dataGridView1;
+        private Panel panel16;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Panel panel17;
+        private Panel panel18;
+        private Label label4;
+        private Label label6;
     }
 }

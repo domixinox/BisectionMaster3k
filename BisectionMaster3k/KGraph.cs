@@ -232,7 +232,7 @@ namespace BisectionMaster3k
             pzero = KPlot.AddScatterPoints(PMzX, PMzY, color: Color.Orange, 8, /*8,*/ MarkerShape.filledCircle, label: MzLabel);
             pzero.DataPointLabels = PMzlabels;
             pzero.DataPointLabelFont.Size = 10;
-            pzero.DataPointLabelFont.Alignment = Alignment.LowerCenter;
+            pzero.DataPointLabelFont.Alignment = Alignment.LowerLeft;
             pzero.IsVisible = yes;
             KControl.Refresh();
         }

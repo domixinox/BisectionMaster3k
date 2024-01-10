@@ -28,9 +28,9 @@ namespace BisectionMaster3k.Frontend
 
       // Handle "-0.0000"
       Regex myRegex = new Regex("-.*[\\.,].*[123456789]", RegexOptions.IgnoreCase);
-      if (! myRegex.IsMatch(sFormattedNumber))
+      if (!myRegex.IsMatch(sFormattedNumber) && (sFormattedNumber.StartsWith("-0.") || sFormattedNumber.StartsWith("-0,")))
       {
-        // Remove '-'
+        //Remove '-'
         sFormattedNumber = sFormattedNumber.Substring(1);
 
       }
