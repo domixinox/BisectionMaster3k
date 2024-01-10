@@ -224,15 +224,15 @@ namespace BisectionMaster3k
         }
         public void ShowPotentialPlot(bool yes=true)
         {
-            string MzLabel = "Potencjalne miejsca zerowe (iteracje)";
+            string MzLabel = "Potencjalne miejsca zerowe";
             //
             // Plot for Potential Zero Points that were calculated
             //
             //SET (PMxX,PMzY,PMzLabels) AddScatter()
             pzero = KPlot.AddScatterPoints(PMzX, PMzY, color: Color.Orange, 8, /*8,*/ MarkerShape.filledCircle, label: MzLabel);
             pzero.DataPointLabels = PMzlabels;
-            pzero.DataPointLabelFont.Size = 12;
-            pzero.DataPointLabelFont.Alignment = Alignment.LowerRight;
+            pzero.DataPointLabelFont.Size = 10;
+            pzero.DataPointLabelFont.Alignment = Alignment.LowerCenter;
             pzero.IsVisible = yes;
             KControl.Refresh();
         }

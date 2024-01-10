@@ -114,6 +114,7 @@
             label15 = new Label();
             label12 = new Label();
             label9 = new Label();
+            dataGridView1 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPageData.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
@@ -143,6 +144,7 @@
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -728,6 +730,7 @@
             // 
             // panel15
             // 
+            panel15.Controls.Add(dataGridView1);
             panel15.Controls.Add(BtnSwitchWykres);
             panel15.Dock = DockStyle.Fill;
             panel15.Location = new Point(3, 563);
@@ -1134,6 +1137,19 @@
             label9.TabIndex = 0;
             label9.Text = "Metoda Bisekcji, czyli Przybliżanie m. zerowego";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(70, 17);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(503, 207);
+            dataGridView1.TabIndex = 10;
+            // 
             // BisectionMaster3k
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1191,6 +1207,7 @@
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1281,5 +1298,6 @@
         private NumericUpDown numericDelta;
         private NumericUpDown numericX1;
         private NumericUpDown numericX2;
+        private DataGridView dataGridView1;
     }
 }

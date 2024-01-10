@@ -72,6 +72,10 @@ namespace BisectionMaster3k
             CheckPotential.Visible = false;
             tabPageGraph.Enabled = false;
             tabPageWyniki.Enabled = false;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Add("it", "Iteracja");
+            dataGridView1.Columns.Add("x", "Wartość x");
+            dataGridView1.Columns.Add("fx", "Wartość f(x)");
         }
 
         private void ObliczMiejsceZerowe_Click(object sender, EventArgs e)
@@ -79,6 +83,8 @@ namespace BisectionMaster3k
             //
             // Reset danych
             //
+            dataGridView1.Rows.Clear();
+            
             CheckMz.Visible = false;
             CheckMzLine.Visible = false;
             CheckPotential.Visible = false;
@@ -247,8 +253,9 @@ namespace BisectionMaster3k
             string sInfo = "";
             for (int i = 0; i < Bisection.DRangeCenters.Count; i++)
             {
-                sInfo += "\r\nx" + i.ToString() + " = " + Bisection.DRangeCenters[i].ToString();
-
+                sInfo += "\r\nx" + (i + 1).ToString() + " = " + Bisection.DRangeCenters[i].ToString();
+                // Add a row to the DataGridView with the data
+                
             }
 
             MessageBox.Show(sInfo, "Potencjalne M. Zerowe");
@@ -284,8 +291,10 @@ namespace BisectionMaster3k
             PMzlabels = new string[PzX.Length];
             for (int i = 0; i < PzX.Length; i++)
             {
+                
                 PzY[i] = Polynomial.Instance.f(PzX[i]);
-                PMzlabels[i] = i.ToString(); //Mozna zmienić format label środków albo po prostu nie pokazywać
+                PMzlabels[i] = (i+1).ToString(); //Mozna zmienić format label środków albo po prostu nie pokazywać
+                dataGridView1.Rows.Add(PMzlabels[i], PzX[i], PzY[i]);
             }
 
             CheckPotential.Visible = true;
