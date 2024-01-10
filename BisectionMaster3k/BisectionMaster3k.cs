@@ -250,6 +250,9 @@ namespace BisectionMaster3k
 
             // Kacper: Testing
             // MessageBox.Show(x.ToString(), "double m. zerowe z Bisection::fBisection");
+
+            // Kacper: Testing
+            /*
             string sInfo = "";
             for (int i = 0; i < Bisection.DRangeCenters.Count; i++)
             {
@@ -258,6 +261,7 @@ namespace BisectionMaster3k
             }
 
             MessageBox.Show(sInfo, "Potencjalne M. Zerowe");
+            */
 
             tabPageWyniki.Enabled = true;
             tabControl1.SelectedTab = tabPageWyniki;

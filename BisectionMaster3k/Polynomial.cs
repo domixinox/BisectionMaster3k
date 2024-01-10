@@ -88,6 +88,8 @@ namespace BisectionMaster3k
       }
 
       // BASE CASE: max expr
+      double coeff = coefficients[expr% coefficients.Count];
+      double power = Math.Pow(x, powers[expr% coefficients.Count]);
       return expr < powers.Count ? coefficients[expr] * Math.Pow(x, powers[expr])
         + f(x, expr+1) : 0;
 
