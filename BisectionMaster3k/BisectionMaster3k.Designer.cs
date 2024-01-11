@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BisectionMaster3k));
             tabControl1 = new TabControl();
             tabPageData = new TabPage();
@@ -86,7 +86,6 @@
             panel15 = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
             panel17 = new Panel();
-            label4 = new Label();
             label6 = new Label();
             panel18 = new Panel();
             dataGridView1 = new DataGridView();
@@ -97,6 +96,7 @@
             formsPlot1 = new ScottPlot.FormsPlot();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
+            checkLabels = new CheckBox();
             label5 = new Label();
             CheckMz = new CheckBox();
             CheckPotential = new CheckBox();
@@ -123,6 +123,7 @@
             label15 = new Label();
             label12 = new Label();
             label9 = new Label();
+            checkMzlabel = new CheckBox();
             tabControl1.SuspendLayout();
             tabPageData.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
@@ -256,6 +257,7 @@
             // 
             // inputDeltaErrorMsg
             // 
+            inputDeltaErrorMsg.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             inputDeltaErrorMsg.ForeColor = Color.ForestGreen;
             inputDeltaErrorMsg.Location = new Point(586, 55);
             inputDeltaErrorMsg.Margin = new Padding(3, 4, 3, 4);
@@ -342,6 +344,7 @@
             // 
             // inputIterationsErrorMsg
             // 
+            inputIterationsErrorMsg.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             inputIterationsErrorMsg.ForeColor = Color.ForestGreen;
             inputIterationsErrorMsg.Location = new Point(586, 55);
             inputIterationsErrorMsg.Margin = new Padding(3, 4, 3, 4);
@@ -445,6 +448,7 @@
             // 
             // inputRangeErrorMsg
             // 
+            inputRangeErrorMsg.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             inputRangeErrorMsg.ForeColor = Color.ForestGreen;
             inputRangeErrorMsg.Location = new Point(586, 55);
             inputRangeErrorMsg.Margin = new Padding(3, 4, 3, 4);
@@ -519,6 +523,7 @@
             // 
             // inputPolynomialErrorMsg
             // 
+            inputPolynomialErrorMsg.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             inputPolynomialErrorMsg.ForeColor = Color.ForestGreen;
             inputPolynomialErrorMsg.Location = new Point(586, 55);
             inputPolynomialErrorMsg.Margin = new Padding(3, 4, 3, 4);
@@ -606,7 +611,8 @@
             // 
             // wynikiMZerowe
             // 
-            wynikiMZerowe.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            wynikiMZerowe.BackColor = SystemColors.ControlLight;
+            wynikiMZerowe.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             wynikiMZerowe.Location = new Point(153, 55);
             wynikiMZerowe.Name = "wynikiMZerowe";
             wynikiMZerowe.ReadOnly = true;
@@ -686,6 +692,7 @@
             // 
             // wynikiWartoscFunkcji
             // 
+            wynikiWartoscFunkcji.BackColor = SystemColors.ControlLight;
             wynikiWartoscFunkcji.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             wynikiWartoscFunkcji.Location = new Point(427, 109);
             wynikiWartoscFunkcji.Name = "wynikiWartoscFunkcji";
@@ -696,6 +703,7 @@
             // 
             // wynikiLiczbaIteracji
             // 
+            wynikiLiczbaIteracji.BackColor = SystemColors.ControlLight;
             wynikiLiczbaIteracji.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             wynikiLiczbaIteracji.Location = new Point(291, 55);
             wynikiLiczbaIteracji.Name = "wynikiLiczbaIteracji";
@@ -769,21 +777,12 @@
             // panel17
             // 
             panel17.BorderStyle = BorderStyle.FixedSingle;
-            panel17.Controls.Add(label4);
             panel17.Controls.Add(label6);
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(3, 3);
             panel17.Name = "panel17";
             panel17.Size = new Size(1101, 41);
             panel17.TabIndex = 0;
-            // 
-            // label4
-            // 
-            label4.BorderStyle = BorderStyle.Fixed3D;
-            label4.Location = new Point(-8, 40);
-            label4.Name = "label4";
-            label4.Size = new Size(1123, 11);
-            label4.TabIndex = 115;
             // 
             // label6
             // 
@@ -810,22 +809,23 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.ControlLight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = SystemColors.ControlLight;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = SystemColors.ButtonFace;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(1101, 262);
             dataGridView1.TabIndex = 10;
@@ -906,6 +906,8 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(checkMzlabel);
+            panel3.Controls.Add(checkLabels);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(CheckMz);
             panel3.Controls.Add(CheckPotential);
@@ -920,6 +922,18 @@
             panel3.Padding = new Padding(15);
             panel3.Size = new Size(1101, 72);
             panel3.TabIndex = 0;
+            // 
+            // checkLabels
+            // 
+            checkLabels.AutoSize = true;
+            checkLabels.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
+            checkLabels.Location = new Point(657, 48);
+            checkLabels.Name = "checkLabels";
+            checkLabels.Size = new Size(153, 21);
+            checkLabels.TabIndex = 8;
+            checkLabels.Text = "Współrzędne punktów";
+            checkLabels.UseVisualStyleBackColor = true;
+            checkLabels.CheckedChanged += checkLabels_CheckedChanged;
             // 
             // label5
             // 
@@ -1238,6 +1252,18 @@
             label9.TabIndex = 0;
             label9.Text = "Metoda Bisekcji, czyli Przybliżanie m. zerowego";
             // 
+            // checkMzlabel
+            // 
+            checkMzlabel.AutoSize = true;
+            checkMzlabel.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point);
+            checkMzlabel.Location = new Point(873, 48);
+            checkMzlabel.Name = "checkMzlabel";
+            checkMzlabel.Size = new Size(144, 21);
+            checkMzlabel.TabIndex = 9;
+            checkMzlabel.Text = "Współrzędne punktu";
+            checkMzlabel.UseVisualStyleBackColor = true;
+            checkMzlabel.CheckedChanged += checkMzlabel_CheckedChanged;
+            // 
             // BisectionMaster3k
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1396,7 +1422,8 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Panel panel17;
         private Panel panel18;
-        private Label label4;
         private Label label6;
+        private CheckBox checkLabels;
+        private CheckBox checkMzlabel;
     }
 }

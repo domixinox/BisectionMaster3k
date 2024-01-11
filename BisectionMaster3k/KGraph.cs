@@ -1,10 +1,12 @@
 ﻿using BisectionMaster3k.Frontend;
 using ScottPlot;
+using ScottPlot.Palettes;
 using ScottPlot.Plottable;
 using ScottPlot.Renderable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -192,13 +194,13 @@ namespace BisectionMaster3k
             string MzLabel = $"Miejsce zerowe X = {MzX[0]}";
             double[] TMzX = { MzX[0] };
             double[] TMzY = { MzY[0] };
-            string[] TMzlabels = { Mzlabels[0] };
+           
             if (singlePoint==false)
             {
                 MzLabel = "Miejsca zerowe";
                 TMzX = MzX;
                 TMzY = MzY;
-                TMzlabels = Mzlabels;
+                
             }
             
             //
@@ -206,11 +208,21 @@ namespace BisectionMaster3k
             //
             //SET (MxX,MzY,MzLabels)
             zero = KPlot.AddScatterPoints(TMzX, TMzY, Color.Red, 12, MarkerShape.filledDiamond, label: MzLabel);
-            zero.DataPointLabels = TMzlabels;
-            zero.DataPointLabelFont.Size = 15;
-            zero.DataPointLabelFont.Alignment = Alignment.UpperLeft;
+            
+            
             zero.IsVisible = yes;
             KControl.Refresh();
+        }
+        public void ShowMzLabel(bool singlePoint = true)
+        {
+            string[] TMzlabels = { Mzlabels[0] };
+            if (singlePoint == false)
+            {
+                TMzlabels = Mzlabels;
+            }
+            zero.DataPointLabels = TMzlabels;
+            zero.DataPointLabelFont.Size = 16;
+            zero.DataPointLabelFont.Alignment = Alignment.UpperLeft;
         }
         public void AddPotentialMz(double[] PMzX, double[] PMzY, string[] PMzlabels, int prec)
         {
@@ -230,13 +242,19 @@ namespace BisectionMaster3k
             //
             //SET (PMxX,PMzY,PMzLabels) AddScatter()
             pzero = KPlot.AddScatterPoints(PMzX, PMzY, color: Color.Orange, 8, /*8,*/ MarkerShape.filledCircle, label: MzLabel);
-            pzero.DataPointLabels = PMzlabels;
-            pzero.DataPointLabelFont.Size = 10;
-            pzero.DataPointLabelFont.Alignment = Alignment.LowerLeft;
+            
             pzero.IsVisible = yes;
             KControl.Refresh();
         }
-        public void AddLinePlot(double[] funX, double[] funY,string funS="f(x)")
+        public void ShowPotentialLabels()
+        {
+            pzero.DataPointLabels = PMzlabels;
+            pzero.DataPointLabelFont.Size = 12;
+            pzero.DataPointLabelFont.Rotation = -60;
+            
+            pzero.DataPointLabelFont.Alignment = Alignment.LowerLeft;
+        }
+            public void AddLinePlot(double[] funX, double[] funY,string funS="f(x)")
         {
             this.funX = funX;
             this.funY = funY;

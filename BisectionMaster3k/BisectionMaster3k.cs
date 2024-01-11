@@ -54,7 +54,51 @@ namespace BisectionMaster3k
             // Rozmiar Okna Glownego
             // Zeby na roznych kompach tak samo bylo - w³aœciwoœæ -> FormBorderStyle - FixedSingle
             this.Size = new Size(1145, 900);
-
+            this.label31.Size = new Size(1123, 11);
+            this.label23.Size = new Size(1123, 11);
+            this.label25.Size = new Size(1123, 11);
+            this.label3.Size = new Size(1123, 11);
+            this.label36.Size = new Size(1123, 11);
+            this.label39.Size = new Size(1123, 11);
+            this.label15.Size = new Size(1123, 11);
+            this.label16.Size = new Size(1123, 11);
+            this.label17.Size = new Size(1123, 11);
+            this.ObliczMiejsceZerowe.Size = new Size(273, 51);
+            this.ObliczMiejsceZerowe.Location = new Point(822, 12);
+            this.BtnSwitchWykres.Location = new Point(926, 12);
+            this.BtnSwitchWykres.Size = new Size(170, 51);
+            this.BtnSave.Location = new Point(865, 5);
+            this.BtnSave.Size = new Size(231, 51);
+            this.BtnReset.Size = new Size(202, 51);
+            this.BtnReset.Location = new Point(5, 5);
+            this.label21.Location = new Point(317, 5);
+            this.label21.Size = new Size(452, 54);
+            this.wynikiMZerowe.Location = new Point(153, 55);
+            this.wynikiMZerowe.Size = new Size(942, 34);
+            this.wynikiLiczbaIteracji.Location = new Point(291, 55);
+            this.wynikiLiczbaIteracji.Size = new Size(804, 34);
+            this.wynikiWartoscFunkcji.Location = new Point(427, 109);
+            this.wynikiWartoscFunkcji.Size = new Size(667, 34);
+            this.inputPolynomial.Location = new Point(65, 55);
+            this.inputPolynomial.Size = new Size(515, 30);
+            this.inputPolynomialErrorMsg.Location = new Point(586, 55);
+            this.inputPolynomialErrorMsg.Size = new Size(508, 85);
+            this.numericterations.Location = new Point(87, 59);
+            this.numericterations.Size = new Size(493, 30);
+            this.inputIterationsErrorMsg.Location = new Point(586, 55);
+            this.inputIterationsErrorMsg.Size = new Size(508, 85);
+            this.numericDelta.Location = new Point(144, 59);
+            this.numericDelta.Size = new Size(437, 30);
+            this.inputDeltaErrorMsg.Location = new Point(586, 55);
+            this.inputDeltaErrorMsg.Size = new Size(508, 85);
+            this.label2.Location = new Point(309, 61);
+            this.label1.Location = new Point(565, 59);
+            this.numericX1.Location = new Point(64, 55);
+            this.numericX1.Size = new Size(239, 30);
+            this.numericX2.Location = new Point(325, 55);
+            this.numericX2.Size = new Size(239, 30);
+            this.inputRangeErrorMsg.Location = new Point(586, 55);
+            this.inputRangeErrorMsg.Size = new Size(508, 85);
             //
             // Windows Forms App lubi wyrzucac przypisane Metody do Delegatow
             // Proponuje subskrybowac recznie
@@ -72,6 +116,8 @@ namespace BisectionMaster3k
             CheckPotential.Visible = false;
             tabPageGraph.Enabled = false;
             tabPageWyniki.Enabled = false;
+            checkMzlabel.Visible = false;
+            checkLabels.Visible = false;
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Add("it", "Iteracja");
             dataGridView1.Columns.Add("x", "Wartość x");
@@ -90,6 +136,8 @@ namespace BisectionMaster3k
             CheckPotential.Visible = false;
             tabPageWyniki.Enabled = false;
             tabPageGraph.Enabled = false;
+            checkMzlabel.Visible = false;
+            checkLabels.Visible = false;
             //********************************************************
             x1 = Convert.ToDouble(numericX1.Text);
             x2 = Convert.ToDouble(numericX2.Text);
@@ -118,7 +166,7 @@ namespace BisectionMaster3k
             // Nazwa wyswietlana w legendzie
             fun1 = null;
             //********************************************************
-            
+
             //
             // Walidator
             //
@@ -269,6 +317,7 @@ namespace BisectionMaster3k
             // Wyniki - wypis
             wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, precZero);
             wynikiLiczbaIteracji.Text = Bisection.IMyIterations.ToString();
+            wynikiMZerowe.BackColor = Color.PaleGreen;
 
             y = Polynomial.Instance.f(x);
             wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, precZero);
@@ -284,6 +333,8 @@ namespace BisectionMaster3k
 
                 CheckMz.Visible = true;
                 CheckMzLine.Visible = true;
+                checkMzlabel.Visible = true;
+                
 
             }
 
@@ -295,12 +346,14 @@ namespace BisectionMaster3k
             {
 
                 PzY[i] = Polynomial.Instance.f(PzX[i]);
-                PMzlabels[i] = (i + 1).ToString(); //Mozna zmienić format label środków albo po prostu nie pokazywać na wykresie nr iteracji
-                dataGridView1.Rows.Add(PMzlabels[i], Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero)));
+                PMzlabels[i] = $"({Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero))};{Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero))})"; //(i + 1).ToString();
+                dataGridView1.Rows.Add(Convert.ToDouble((i + 1)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero)));
             }
+            dataGridView1.Rows.Add(Convert.ToDouble(PzX.Length + 1), Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, precZero)));
+            dataGridView1.Rows[PzX.Length].DefaultCellStyle.BackColor = Color.PaleGreen;
 
             CheckPotential.Visible = true;
-
+            checkLabels.Visible = true;
             // Funkcja wielomianu wrzucana odrazu 
             func1 = new Func<double, double?>((x) => Polynomial.Instance.f(x));
             // Nazwa wyswietlana w legendzie 
@@ -420,10 +473,17 @@ namespace BisectionMaster3k
                     // Poka¿ wykres potencjalnych miejsc zerowych
                     if (CheckPotential.Checked == true)
                     {
+                        checkLabels.Enabled = true;
                         plot1.ShowPotentialPlot();
+                        if (checkLabels.Checked == true)
+                        {
+                            plot1.ShowPotentialLabels();
+                        }
                     }
                     else
                     {
+                        checkLabels.Enabled = false;
+                        checkLabels.Checked = false;
                         plot1.ShowPotentialPlot(false);
                     }
 
@@ -439,6 +499,7 @@ namespace BisectionMaster3k
                         if (CheckMzLine.Checked == true)
                         {
                             plot1.ShowMzLine();
+
                         }
                         else
                         {
@@ -449,9 +510,17 @@ namespace BisectionMaster3k
                         if (CheckMz.Checked == true)
                         {
                             plot1.ShowMzPlot(prec: precZero);
+                            checkMzlabel.Enabled = true;
+                            if (checkMzlabel.Checked == true)
+                            {
+                                plot1.ShowMzLabel();
+                            }
+                           
                         }
                         else
                         {
+                            checkMzlabel.Enabled = false;
+                            checkMzlabel.Checked = false;
                             plot1.ShowMzPlot(false);
                         }
 
@@ -621,6 +690,16 @@ namespace BisectionMaster3k
             }
 
             return liczbaZer;
+        }
+
+        private void checkLabels_CheckedChanged(object sender, EventArgs e)
+        {
+            GeneratePlot(); 
+        }
+
+        private void checkMzlabel_CheckedChanged(object sender, EventArgs e)
+        {
+            GeneratePlot();
         }
     }
 }
