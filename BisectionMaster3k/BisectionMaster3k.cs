@@ -218,7 +218,7 @@ namespace BisectionMaster3k
 
       // ( Patrz: Parser.cs )
 
-      Parser.ParsePolynomialToDouble(inputPolynomial.Text);
+      y=Parser.ParsePolynomialToDouble(inputPolynomial.Text);
       //======================================================================================================
       // Problem#1Na większych wielomianach przedział nie działa(?)
       // Kacper: Testowałem Bisection:fBisection na wielowyrazowych wielomianach
