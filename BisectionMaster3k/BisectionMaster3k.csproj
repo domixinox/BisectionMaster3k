@@ -6,10 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Graphics\Raster\logotype.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="CodeFile1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphics\Raster\logotype.ico" />
   </ItemGroup>
 
   <ItemGroup>
