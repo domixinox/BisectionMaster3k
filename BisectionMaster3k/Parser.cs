@@ -239,8 +239,3 @@ namespace BisectionMaster3k
     }
 }
 
-
-
-
-    }
-}
