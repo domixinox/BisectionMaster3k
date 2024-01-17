@@ -178,14 +178,14 @@ namespace BisectionMaster3k
             }
             KControl.Refresh();
         }
-        public void AddMz(double[] MzX, double[] MzY, int prec)
+        public void AddMz(double[] MzX, double[] MzY, int it)
         {
             this.MzX = MzX;
             this.MzY = MzY;
             this.Mzlabels = new string[MzX.Length];
             for(int i = 0; i < MzX.Length; i++) 
             {
-                this.Mzlabels[i] = $"({MzX[i]}; {MzY[i]})";
+                this.Mzlabels[i] = " x" + (it).ToString() + $" ({MzX[i]}; {MzY[i]})";
             }
             
         }

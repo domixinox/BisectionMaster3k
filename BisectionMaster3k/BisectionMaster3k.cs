@@ -346,7 +346,7 @@ namespace BisectionMaster3k
             {
 
                 PzY[i] = Polynomial.Instance.f(PzX[i]);
-                PMzlabels[i] = $"({Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero))};{Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero))})"; //(i + 1).ToString();
+                PMzlabels[i] = " x"+(i).ToString()+$" ({Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero))};{Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero))})"; //(i + 1).ToString();
                 dataGridView1.Rows.Add(Convert.ToDouble((i + 1)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero)));
             }
             dataGridView1.Rows.Add(Convert.ToDouble(PzX.Length + 1), Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, precZero)));
@@ -494,7 +494,7 @@ namespace BisectionMaster3k
                     if (MzX.Length == 1 && MzY.Length == 1)
                     {
                         // Dodaj dane wykresu miejsc zerowych
-                        plot1.AddMz(MzX, MzY, precZero);
+                        plot1.AddMz(MzX, MzY, PzX.Length);
                         // Poka¿ linie przerywana X dla miejsca zerowego (singlePoint: false -> poka¿e wszystkie linie dla zapisane miejsca w tablicy)
                         if (CheckMzLine.Checked == true)
                         {
