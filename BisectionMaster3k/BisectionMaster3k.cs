@@ -99,6 +99,10 @@ namespace BisectionMaster3k
             this.numericX2.Size = new Size(239, 30);
             this.inputRangeErrorMsg.Location = new Point(586, 55);
             this.inputRangeErrorMsg.Size = new Size(508, 85);
+            this.checkLabels.Location = new Point(575, 50);
+            this.checkLabels.Size = new Size(130, 17);
+            this.checkMzlabel.Location = new Point(755, 50);
+            this.checkMzlabel.Size = new Size(122, 17);
             //
             // Windows Forms App lubi wyrzucac przypisane Metody do Delegatow
             // Proponuje subskrybowac recznie
