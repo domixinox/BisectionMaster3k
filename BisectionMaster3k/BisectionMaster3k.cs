@@ -27,11 +27,12 @@ namespace BisectionMaster3k
         double[]? PzX;
         double[]? PzY;
         string[]? PMzlabels;
+
         // Funkcja wielomianu
-        double[]? funX;
-        double[]? funY;
+        //double[]? funX;
+        //double[]? funY;
         // Nazwa wyswietlana w legendzie
-        string? fun;
+        //string? fun;
 
         // Funkcja wielomianu wrzucana odrazu
         // Functions are defined as delegates with an input and output
@@ -51,58 +52,9 @@ namespace BisectionMaster3k
 
             Exceptions.init(this);
 
-            // Rozmiar Okna Glownego
-            // Zeby na roznych kompach tak samo bylo - w³aœciwoœæ -> FormBorderStyle - FixedSingle
+            // Zeby na roznych kompach tak samo bylo - w³aœciwoœæ
             this.Size = new Size(1145, 900);
-            this.label31.Size = new Size(1123, 11);
-            this.label23.Size = new Size(1123, 11);
-            this.label25.Size = new Size(1123, 11);
-            this.label3.Size = new Size(1123, 11);
-            this.label36.Size = new Size(1123, 11);
-            this.label39.Size = new Size(1123, 11);
-            this.label15.Size = new Size(1123, 11);
-            this.label16.Size = new Size(1123, 11);
-            this.label17.Size = new Size(1123, 11);
-            this.ObliczMiejsceZerowe.Size = new Size(273, 51);
-            this.ObliczMiejsceZerowe.Location = new Point(822, 12);
-            this.BtnSwitchWykres.Location = new Point(926, 12);
-            this.BtnSwitchWykres.Size = new Size(170, 51);
-            this.BtnSave.Location = new Point(865, 5);
-            this.BtnSave.Size = new Size(231, 51);
-            this.BtnReset.Size = new Size(202, 51);
-            this.BtnReset.Location = new Point(5, 5);
-            this.label21.Location = new Point(317, 5);
-            this.label21.Size = new Size(452, 54);
-            this.wynikiMZerowe.Location = new Point(153, 55);
-            this.wynikiMZerowe.Size = new Size(942, 34);
-            this.wynikiLiczbaIteracji.Location = new Point(291, 55);
-            this.wynikiLiczbaIteracji.Size = new Size(804, 34);
-            this.wynikiWartoscFunkcji.Location = new Point(427, 109);
-            this.wynikiWartoscFunkcji.Size = new Size(667, 34);
-            this.inputPolynomial.Location = new Point(65, 55);
-            this.inputPolynomial.Size = new Size(515, 30);
-            this.inputPolynomialErrorMsg.Location = new Point(586, 55);
-            this.inputPolynomialErrorMsg.Size = new Size(508, 85);
-            this.numericterations.Location = new Point(87, 59);
-            this.numericterations.Size = new Size(493, 30);
-            this.inputIterationsErrorMsg.Location = new Point(586, 55);
-            this.inputIterationsErrorMsg.Size = new Size(508, 85);
-            this.numericDelta.Location = new Point(144, 59);
-            this.numericDelta.Size = new Size(437, 30);
-            this.inputDeltaErrorMsg.Location = new Point(586, 55);
-            this.inputDeltaErrorMsg.Size = new Size(508, 85);
-            this.label2.Location = new Point(309, 61);
-            this.label1.Location = new Point(565, 59);
-            this.numericX1.Location = new Point(64, 55);
-            this.numericX1.Size = new Size(239, 30);
-            this.numericX2.Location = new Point(325, 55);
-            this.numericX2.Size = new Size(239, 30);
-            this.inputRangeErrorMsg.Location = new Point(586, 55);
-            this.inputRangeErrorMsg.Size = new Size(508, 85);
-            this.checkLabels.Location = new Point(575, 50);
-            this.checkLabels.Size = new Size(130, 17);
-            this.checkMzlabel.Location = new Point(755, 50);
-            this.checkMzlabel.Size = new Size(122, 17);
+            AttachThings();
             //
             // Windows Forms App lubi wyrzucac przypisane Metody do Delegatow
             // Proponuje subskrybowac recznie
@@ -695,7 +647,85 @@ namespace BisectionMaster3k
 
             return liczbaZer;
         }
+        private void AttachThings()
+        {
+            this.label31.Size = new Size(1123, 11);
+            this.label23.Size = new Size(1123, 11);
+            this.label25.Size = new Size(1123, 11);
+            this.label3.Size = new Size(1123, 11);
+            this.label36.Size = new Size(1123, 11);
+            this.label39.Size = new Size(1123, 11);
+            this.label15.Size = new Size(1123, 11);
+            this.label16.Size = new Size(1123, 11);
+            this.label17.Size = new Size(1123, 11);
+            this.ObliczMiejsceZerowe.Size = new Size(273, 51);
+            this.ObliczMiejsceZerowe.Location = new Point(822, 12);
+            this.BtnSwitchWykres.Location = new Point(926, 12);
+            this.BtnSwitchWykres.Size = new Size(170, 51);
+            this.BtnSave.Location = new Point(865, 5);
+            this.BtnSave.Size = new Size(231, 51);
+            this.BtnReset.Size = new Size(202, 51);
+            this.BtnReset.Location = new Point(5, 5);
+            this.label21.Location = new Point(317, 5);
+            this.label21.Size = new Size(452, 54);
+            this.wynikiMZerowe.Location = new Point(153, 55);
+            this.wynikiMZerowe.Size = new Size(942, 34);
+            this.wynikiLiczbaIteracji.Location = new Point(291, 55);
+            this.wynikiLiczbaIteracji.Size = new Size(804, 34);
+            this.wynikiWartoscFunkcji.Location = new Point(427, 109);
+            this.wynikiWartoscFunkcji.Size = new Size(667, 34);
+            this.inputPolynomial.Location = new Point(65, 55);
+            this.inputPolynomial.Size = new Size(515, 30);
+            this.inputPolynomialErrorMsg.Location = new Point(586, 55);
+            this.inputPolynomialErrorMsg.Size = new Size(508, 85);
+            this.numericterations.Location = new Point(87, 59);
+            this.numericterations.Size = new Size(493, 30);
+            this.inputIterationsErrorMsg.Location = new Point(586, 55);
+            this.inputIterationsErrorMsg.Size = new Size(508, 85);
+            this.numericDelta.Location = new Point(144, 59);
+            this.numericDelta.Size = new Size(437, 30);
+            this.inputDeltaErrorMsg.Location = new Point(586, 55);
+            this.inputDeltaErrorMsg.Size = new Size(508, 85);
+            this.numericX1.Location = new Point(64, 55);
+            this.numericX1.Size = new Size(239, 30);
+            this.numericX2.Location = new Point(325, 55);
+            this.numericX2.Size = new Size(239, 30);
+            this.inputRangeErrorMsg.Location = new Point(586, 55);
+            this.inputRangeErrorMsg.Size = new Size(508, 85);
 
+            this.checkLabels.Location = new Point(657, 48);
+            this.checkLabels.Size = new Size(153, 21);
+            this.checkMzlabel.Location = new Point(873, 48);
+            this.checkMzlabel.Size = new Size(144, 21);
+
+            this.CheckLegend.Location = new Point(15, 15);
+            this.CheckLegend.Size = new Size(115, 40);
+            this.CheckMzLine.Location = new Point(130, 15);
+            this.CheckMzLine.Size = new Size(155, 40);
+            this.CheckSpan.Location = new Point(285, 15);
+            this.CheckSpan.Size = new Size(112, 40);
+            this.CheckRange.Location = new Point(397, 15);
+            this.CheckRange.Size = new Size(122, 40);
+            this.CheckFunction.Location = new Point(519, 15);
+            this.CheckFunction.Size = new Size(123, 40);
+            this.CheckPotential.Location = new Point(642, 15);
+            this.CheckPotential.Size = new Size(216, 40);
+            this.CheckMz.Location = new Point(858, 15);
+            this.CheckMz.Size = new Size(183, 40);
+
+            this.label33.Location = new Point(10, 59);
+            this.label33.Size = new Size(55, 23);
+            this.label30.Location = new Point(15, 59);
+            this.label30.Size = new Size(48, 23);
+            this.label2.Location = new Point(309, 61);
+            this.label2.Size = new Size(15, 23);
+            this.label1.Location = new Point(565, 59);
+            this.label1.Size = new Size(16, 23);
+            this.label29.Location = new Point(5, 59);
+            this.label29.Size = new Size(86, 23);
+            this.label26.Location = new Point(5, 59);
+            this.label26.Size = new Size(144, 23);
+        }
         private void checkLabels_CheckedChanged(object sender, EventArgs e)
         {
             GeneratePlot();

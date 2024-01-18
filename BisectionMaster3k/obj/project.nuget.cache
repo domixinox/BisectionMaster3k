@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "NP68oKgwjmi3tLyD9qGn1NHRggxdPm0VUBIi7RyCmhbvDJn2jaCHaLNdtMPCyUJ+cRU4X0KVyhR06Syz7prbEA==",
+  "dgSpecHash": "M1+APMB6LkNF4egF7So9OtK7nNBPY602bMurD4M3jeeOahxSIr/BfudrzsJPGZJXwqq1pupqenrgetr8qBwXUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\student\\Source\\Repos\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k.csproj",
+  "projectFilePath": "C:\\Users\\Dominik\\Source\\Repos\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\student\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
-    "C:\\Users\\student\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\student\\.nuget\\packages\\scottplot\\4.1.70\\scottplot.4.1.70.nupkg.sha512",
-    "C:\\Users\\student\\.nuget\\packages\\scottplot.winforms\\4.1.70\\scottplot.winforms.4.1.70.nupkg.sha512",
-    "C:\\Users\\student\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
-    "C:\\Users\\student\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\scottplot\\4.1.70\\scottplot.4.1.70.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\scottplot.winforms\\4.1.70\\scottplot.winforms.4.1.70.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
