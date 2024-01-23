@@ -271,12 +271,12 @@ namespace BisectionMaster3k
             tabControl1.SelectedTab = tabPageWyniki;
 
             // Wyniki - wypis
-            wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, precZero);
+            wynikiMZerowe.Text = UserInterface.vFormatNumberPrecision(x, 20);
             wynikiLiczbaIteracji.Text = Bisection.IMyIterations.ToString();
             wynikiMZerowe.BackColor = Color.PaleGreen;
 
             y = Polynomial.Instance.f(x);
-            wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, precZero);
+            wynikiWartoscFunkcji.Text = UserInterface.vFormatNumberPrecision(y, 20);
 
             //
             // Wykres Data - Data to rewrite with actual data 
@@ -305,7 +305,7 @@ namespace BisectionMaster3k
                 PMzlabels[i] = " x"+(i).ToString()+$" ({Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero))};{Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero))})"; //(i + 1).ToString();
                 dataGridView1.Rows.Add(Convert.ToDouble((i + 1)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzX[i], precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(PzY[i], precZero)));
             }
-            dataGridView1.Rows.Add(Convert.ToDouble(PzX.Length + 1), Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, precZero)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, precZero)));
+            dataGridView1.Rows.Add(Convert.ToDouble(PzX.Length + 1), Convert.ToDouble(UserInterface.vFormatNumberPrecision(x, 20)), Convert.ToDouble(UserInterface.vFormatNumberPrecision(y, 20)));
             dataGridView1.Rows[PzX.Length].DefaultCellStyle.BackColor = Color.PaleGreen;
 
             CheckPotential.Visible = true;
@@ -725,6 +725,19 @@ namespace BisectionMaster3k
             this.label29.Size = new Size(86, 23);
             this.label26.Location = new Point(5, 59);
             this.label26.Size = new Size(144, 23);
+
+            this.label41.Size = new Size(293, 28);
+            this.label41.Location = new Point(9, 55);
+            this.label42.Location = new Point(10, 109);
+            this.label42.Size = new Size(422, 28);
+            this.wynikiLiczbaIteracji.Location = new Point(291, 55);
+            this.wynikiLiczbaIteracji.Size = new Size(804, 34);
+            this.wynikiWartoscFunkcji.Location = new Point(427, 109);
+            this.wynikiWartoscFunkcji.Size = new Size(667, 34);
+            this.label38.Size = new Size(149, 28);
+            this.label38.Location = new Point(10, 55);
+            this.wynikiMZerowe.Location = new Point(153, 55);
+            this.wynikiMZerowe.Size = new Size(942, 34);
         }
         private void checkLabels_CheckedChanged(object sender, EventArgs e)
         {

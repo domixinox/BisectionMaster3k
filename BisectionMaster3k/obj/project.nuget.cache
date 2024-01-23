@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M1+APMB6LkNF4egF7So9OtK7nNBPY602bMurD4M3jeeOahxSIr/BfudrzsJPGZJXwqq1pupqenrgetr8qBwXUQ==",
+  "dgSpecHash": "gSzXhOyRRZ/0o2jxXIGJUKMpTg4v4eHs3YagyxG/iGAgtt4Wrw34CAMXUOyyrM0ldDNxwKhig9bNQOYQz8+dEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dominik\\Source\\Repos\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k.csproj",
+  "projectFilePath": "C:\\Users\\Dominik\\source\\repos\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
