@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "1fwIKfVLilYWJx5WlozeTUk1A2VmUaAzgdNUKnk58CGUcV1g4HQUATax73ZYJuxN09bxUbq7A6mrdpM3zNC0VQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dominik\\source\\repos\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k\\BisectionMaster3k.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\scottplot\\4.1.70\\scottplot.4.1.70.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\scottplot.winforms\\4.1.70\\scottplot.winforms.4.1.70.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.23\\microsoft.netcore.app.runtime.win-x64.6.0.23.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.23\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.23.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.23\\microsoft.aspnetcore.app.runtime.win-x64.6.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
